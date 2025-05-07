@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Eleve\\Documents\\A21\\D21\\Caubert-Stroher-KlausnitzerSae24\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{831A8520-BFD8-4959-9565-3B0BB4E4CE6D}|Caubert-Stroher-KlausnitzerSae24\\Caubert-Stroher-KlausnitzerSae24.csproj|c:\\users\\eleve\\documents\\a21\\d21\\caubert-stroher-klausnitzersae24\\caubert-stroher-klausnitzersae24\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{831A8520-BFD8-4959-9565-3B0BB4E4CE6D}|Caubert-Stroher-KlausnitzerSae24\\Caubert-Stroher-KlausnitzerSae24.csproj|solutionrelative:caubert-stroher-klausnitzersae24\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Eleve\\Documents\\A21\\D21\\Caubert-Stroher-KlausnitzerSae24\\Caubert-Stroher-KlausnitzerSae24\\Form1.cs",
+              "RelativeDocumentMoniker": "Caubert-Stroher-KlausnitzerSae24\\Form1.cs",
+              "ToolTip": "C:\\Users\\Eleve\\Documents\\A21\\D21\\Caubert-Stroher-KlausnitzerSae24\\Caubert-Stroher-KlausnitzerSae24\\Form1.cs [Design]",
+              "RelativeToolTip": "Caubert-Stroher-KlausnitzerSae24\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T07:14:12.553Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
