@@ -13,5 +13,4 @@ Projet Caserne Pompier
 - Il nous faut un nom et un logo pour notre Application : BlazeOps, FireBase HQ (Headquarters = Quartier Géneral)
 
 
-- 
 
