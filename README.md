@@ -16,3 +16,6 @@ Projet Caserne Pompier
 
 - thème simple bleu a la chat GPT 
 
+
+- On fait un HOME avec tout les boutons affichez sur la gauche et a droite en petit le tableau de bord, on a 6 boutons (Tableau de bord,nouvelle mission, gestion des engins, gestion du personnel, statistiques et quittez) 
+ensuite sur les pages a chaque fois on a le boutons retour qui nous permets de retourner sur la page home (regardez pour des raccourcis entre les pages)
