@@ -10,7 +10,9 @@ Projet Caserne Pompier
 
 - Il faut toujours utilisé les fichiers connections et datas pour toutes connexions a la BDD. 
 
-- Il nous faut un nom et un logo pour notre Application : BlazeOps, FireBase HQ (Headquarters = Quartier Géneral)
+- nom app :  FireBase HQ (Headquarters = Quartier Géneral)
 
+- Police de caractères SegoUI : taille de base 11 
 
+- thème simple bleu a la chat GPT 
 
