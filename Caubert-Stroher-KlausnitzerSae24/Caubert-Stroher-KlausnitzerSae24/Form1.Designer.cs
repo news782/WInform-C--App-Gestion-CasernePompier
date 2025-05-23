@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grpbtnVolet = new System.Windows.Forms.GroupBox();
-            this.btnTDB = new System.Windows.Forms.Button();
-            this.btnMission = new System.Windows.Forms.Button();
-            this.btnEngins = new System.Windows.Forms.Button();
-            this.btnPersonnel = new System.Windows.Forms.Button();
-            this.btnStats = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnPersonnel = new System.Windows.Forms.Button();
+            this.btnEngins = new System.Windows.Forms.Button();
+            this.btnMission = new System.Windows.Forms.Button();
+            this.btnTDB = new System.Windows.Forms.Button();
             this.grpbtnVolet.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,41 +53,14 @@
             this.grpbtnVolet.TabIndex = 0;
             this.grpbtnVolet.TabStop = false;
             // 
-            // btnTDB
+            // btnQuitter
             // 
-            this.btnTDB.Location = new System.Drawing.Point(11, 36);
-            this.btnTDB.Name = "btnTDB";
-            this.btnTDB.Size = new System.Drawing.Size(196, 42);
-            this.btnTDB.TabIndex = 0;
-            this.btnTDB.Text = "Tableau de bord";
-            this.btnTDB.UseVisualStyleBackColor = true;
-            // 
-            // btnMission
-            // 
-            this.btnMission.Location = new System.Drawing.Point(11, 84);
-            this.btnMission.Name = "btnMission";
-            this.btnMission.Size = new System.Drawing.Size(196, 42);
-            this.btnMission.TabIndex = 1;
-            this.btnMission.Text = "Nouvelle Mission";
-            this.btnMission.UseVisualStyleBackColor = true;
-            // 
-            // btnEngins
-            // 
-            this.btnEngins.Location = new System.Drawing.Point(11, 132);
-            this.btnEngins.Name = "btnEngins";
-            this.btnEngins.Size = new System.Drawing.Size(196, 42);
-            this.btnEngins.TabIndex = 2;
-            this.btnEngins.Text = "Gestion des engins";
-            this.btnEngins.UseVisualStyleBackColor = true;
-            // 
-            // btnPersonnel
-            // 
-            this.btnPersonnel.Location = new System.Drawing.Point(11, 180);
-            this.btnPersonnel.Name = "btnPersonnel";
-            this.btnPersonnel.Size = new System.Drawing.Size(196, 42);
-            this.btnPersonnel.TabIndex = 3;
-            this.btnPersonnel.Text = "Gestion du personnel";
-            this.btnPersonnel.UseVisualStyleBackColor = true;
+            this.btnQuitter.Location = new System.Drawing.Point(11, 419);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(196, 42);
+            this.btnQuitter.TabIndex = 5;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = true;
             // 
             // btnStats
             // 
@@ -98,18 +71,46 @@
             this.btnStats.Text = "Statistique";
             this.btnStats.UseVisualStyleBackColor = true;
             // 
-            // btnQuitter
+            // btnPersonnel
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(11, 419);
-            this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(196, 42);
-            this.btnQuitter.TabIndex = 5;
-            this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnPersonnel.Location = new System.Drawing.Point(11, 180);
+            this.btnPersonnel.Name = "btnPersonnel";
+            this.btnPersonnel.Size = new System.Drawing.Size(196, 42);
+            this.btnPersonnel.TabIndex = 3;
+            this.btnPersonnel.Text = "Gestion du personnel";
+            this.btnPersonnel.UseVisualStyleBackColor = true;
+            // 
+            // btnEngins
+            // 
+            this.btnEngins.Location = new System.Drawing.Point(11, 132);
+            this.btnEngins.Name = "btnEngins";
+            this.btnEngins.Size = new System.Drawing.Size(196, 42);
+            this.btnEngins.TabIndex = 2;
+            this.btnEngins.Text = "Gestion des engins";
+            this.btnEngins.UseVisualStyleBackColor = true;
+            // 
+            // btnMission
+            // 
+            this.btnMission.Location = new System.Drawing.Point(11, 84);
+            this.btnMission.Name = "btnMission";
+            this.btnMission.Size = new System.Drawing.Size(196, 42);
+            this.btnMission.TabIndex = 1;
+            this.btnMission.Text = "Nouvelle Mission";
+            this.btnMission.UseVisualStyleBackColor = true;
+            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
+            // 
+            // btnTDB
+            // 
+            this.btnTDB.Location = new System.Drawing.Point(11, 36);
+            this.btnTDB.Name = "btnTDB";
+            this.btnTDB.Size = new System.Drawing.Size(196, 42);
+            this.btnTDB.TabIndex = 0;
+            this.btnTDB.Text = "Tableau de bord";
+            this.btnTDB.UseVisualStyleBackColor = true;
             // 
             // frmSoldatFeu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 791);
             this.Controls.Add(this.grpbtnVolet);
