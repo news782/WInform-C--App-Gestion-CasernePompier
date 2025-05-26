@@ -22,7 +22,7 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void frmSoldatFeu_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnMission_Click(object sender, EventArgs e)
