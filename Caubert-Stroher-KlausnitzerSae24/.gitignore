@@ -1,1 +1,24 @@
+# Dossiers de build
+bin/
+obj/
+
+# Fichiers exécutables et de debug
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.config
+*.xml
+
+# Dossiers spécifiques aux builds
+*.csproj.FileListAbsolute.txt
+*.csproj.GenerateResource.cache
+*.csproj.CoreCompileInputs.cache
+*.Up2Date
+
+# Dossiers de Visual Studio
 .vs/
+
+# Ne pas ignorer la base de données
+!bin/Debug/SDIS67.db
