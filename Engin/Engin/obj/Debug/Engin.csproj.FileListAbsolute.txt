@@ -10,3 +10,15 @@ C:\Users\Eleve\Documents\A21\D21\Engin\Engin\obj\Debug\Engin.csproj.Up2Date
 C:\Users\Eleve\Documents\A21\D21\Engin\Engin\obj\Debug\Engin.dll
 C:\Users\Eleve\Documents\A21\D21\Engin\Engin\obj\Debug\Engin.pdb
 C:\Users\Eleve\Documents\A21\D21\Engin\Engin\obj\Debug\Engin.Properties.Resources.resources
+D:\a21-caserne\Engin\Engin\bin\Debug\Engin.dll
+D:\a21-caserne\Engin\Engin\bin\Debug\Engin.pdb
+D:\a21-caserne\Engin\Engin\bin\Debug\System.Data.SQLite.dll
+D:\a21-caserne\Engin\Engin\bin\Debug\System.Data.SQLite.xml
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.csproj.AssemblyReference.cache
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.Properties.Resources.resources
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.Engin.resources
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.csproj.GenerateResource.cache
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.csproj.CoreCompileInputs.cache
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.csproj.Up2Date
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.dll
+D:\a21-caserne\Engin\Engin\obj\Debug\Engin.pdb

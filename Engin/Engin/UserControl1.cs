@@ -50,7 +50,6 @@ namespace Engin
 
         private void Engin_Load(object sender, EventArgs e)
         {
-            cx.Open();
 
             string qry = "Select id, nom From Caserne ";
             SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
