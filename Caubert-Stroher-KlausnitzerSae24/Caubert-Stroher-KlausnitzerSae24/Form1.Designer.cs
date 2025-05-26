@@ -35,7 +35,10 @@
             this.btnEngins = new System.Windows.Forms.Button();
             this.btnMission = new System.Windows.Forms.Button();
             this.btnTDB = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.engin1 = new Engin.Engin();
             this.grpbtnVolet.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpbtnVolet
@@ -108,17 +111,34 @@
             this.btnTDB.Text = "Tableau de bord";
             this.btnTDB.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.engin1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1185, 726);
+            this.panel1.TabIndex = 1;
+            // 
+            // engin1
+            // 
+            this.engin1.Location = new System.Drawing.Point(168, 99);
+            this.engin1.Name = "engin1";
+            this.engin1.Size = new System.Drawing.Size(818, 360);
+            this.engin1.TabIndex = 0;
+            // 
             // frmSoldatFeu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 791);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpbtnVolet);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSoldatFeu";
             this.Text = "Les soldats du feu";
             this.Load += new System.EventHandler(this.frmSoldatFeu_Load);
             this.grpbtnVolet.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -132,6 +152,8 @@
         private System.Windows.Forms.Button btnMission;
         private System.Windows.Forms.Button btnTDB;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Panel panel1;
+        private Engin.Engin engin1;
     }
 }
 

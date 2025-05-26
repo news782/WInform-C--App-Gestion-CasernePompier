@@ -18,10 +18,10 @@ namespace Engin
 
         public Engin()
         {
-            /*InitializeComponent();
+            InitializeComponent();
 
 
-            string chcon = @"Data Source = SDIS67.db";
+            /*string chcon = @"Data Source = SDIS67.db";
 
             try
             {
