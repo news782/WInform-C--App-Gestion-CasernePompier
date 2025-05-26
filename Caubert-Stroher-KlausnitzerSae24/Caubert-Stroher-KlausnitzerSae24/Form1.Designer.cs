@@ -35,7 +35,10 @@
             this.btnEngins = new System.Windows.Forms.Button();
             this.btnMission = new System.Windows.Forms.Button();
             this.btnTDB = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpbtnVolet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpbtnVolet
@@ -47,7 +50,7 @@
             this.grpbtnVolet.Controls.Add(this.btnEngins);
             this.grpbtnVolet.Controls.Add(this.btnMission);
             this.grpbtnVolet.Controls.Add(this.btnTDB);
-            this.grpbtnVolet.Location = new System.Drawing.Point(35, 27);
+            this.grpbtnVolet.Location = new System.Drawing.Point(12, 12);
             this.grpbtnVolet.Name = "grpbtnVolet";
             this.grpbtnVolet.Size = new System.Drawing.Size(218, 467);
             this.grpbtnVolet.TabIndex = 0;
@@ -108,17 +111,35 @@
             this.btnTDB.Text = "Tableau de bord";
             this.btnTDB.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(237, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(810, 461);
+            this.panel1.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 486);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1034, 293);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // frmSoldatFeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 791);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpbtnVolet);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSoldatFeu";
             this.Text = "Les soldats du feu";
             this.Load += new System.EventHandler(this.frmSoldatFeu_Load);
             this.grpbtnVolet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,6 +153,8 @@
         private System.Windows.Forms.Button btnMission;
         private System.Windows.Forms.Button btnTDB;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
