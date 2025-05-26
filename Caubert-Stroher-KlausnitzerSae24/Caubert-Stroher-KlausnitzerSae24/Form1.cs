@@ -23,17 +23,15 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void frmSoldatFeu_Load(object sender, EventArgs e)
         {
-            UCnouvelleMission nv = new UCnouvelleMission(MesDatas.DsGlobal);
-            panel1.Controls.Add(nv);
-            nv.Dock = DockStyle.Fill;
-            nv.Show();
-
-            //teste pour verifier si les nouvelles missions sont bien ajouter dans le dsGlobal
+            dataGridView1.DataSource = MesDatas.DsGlobal.Tables["Mission"];
         }
 
         private void btnMission_Click(object sender, EventArgs e)
         {
-
+            UCnouvelleMission nv = new UCnouvelleMission(MesDatas.DsGlobal);
+            panel1.Controls.Add(nv);
+            nv.Dock = DockStyle.Fill;
+            nv.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,6 +42,16 @@ namespace Caubert_Stroher_KlausnitzerSae24
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = MesDatas.DsGlobal.Tables["Mission"];
+        }
+
+        private void grpbtnVolet_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

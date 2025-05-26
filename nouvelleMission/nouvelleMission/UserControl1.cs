@@ -157,12 +157,7 @@ namespace nouvelleMission
                 {
                     dtEngins.ImportRow(enginsDisponibles[i]);
                 }
-            }
-
-            
-
-            
-
+            }            
 
         }
 
@@ -173,20 +168,8 @@ namespace nouvelleMission
 
         private void btnAnnuler_Click(object sender, EventArgs e) 
         {
-            
+            this.Parent.Controls.Remove(this);
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         public static void initDs() //initialisation du DataSet dsGlobal (a utiliser lors du FormLoad du Form de base)
         {

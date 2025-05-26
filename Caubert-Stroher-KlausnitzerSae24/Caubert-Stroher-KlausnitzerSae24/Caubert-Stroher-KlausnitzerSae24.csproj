@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Engin">
+      <HintPath>C:\Users\Eleve\Documents\A21\D21\Engin\Engin\bin\Debug\Engin.dll</HintPath>
+    </Reference>
+    <Reference Include="Statistiques">
+      <HintPath>C:\Users\Eleve\Documents\A21\D21\Statistiques\Statistiques\bin\Debug\Statistiques.dll</HintPath>
+    </Reference>
     <Reference Include="nouvelleMission">
       <HintPath>..\..\nouvelleMission\nouvelleMission\bin\Debug\nouvelleMission.dll</HintPath>
     </Reference>
