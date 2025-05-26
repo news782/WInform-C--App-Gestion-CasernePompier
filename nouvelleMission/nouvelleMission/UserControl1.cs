@@ -10,32 +10,20 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Data.Common;
+using System.Security.Cryptography;
 
 namespace nouvelleMission
 {
     public partial class UCnouvelleMission: UserControl
     {
-        SQLiteConnection cx;// a supprimer
-        DataSet dsGlobal;
+        static DataSet dsGlobal;
 
         public UCnouvelleMission()// A SUPPIMER
         {
             InitializeComponent();
-
-            string chaine = "Data Source=SDIS67.db";
-
-            try
-            {
-                cx = new SQLiteConnection(chaine);
-                cx.Open();
-            }
-
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            cx.Close();
+            //  /!\ A SUPPRIMER ABSOLUEMENT /!\
+            initDs();
+            
         }
 
         public UCnouvelleMission(DataSet ds)
@@ -48,38 +36,30 @@ namespace nouvelleMission
         private void UCnouvelleMission_Load(object sender, EventArgs e)
         {
             //remplissage des cbo Casernes et Nature du sinistre
-            cx.Open();
-            string qry = "select libelle, id from NatureSinistre;";
-
-            SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx) ;
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            
+            
+            DataTable dt = dsGlobal.Tables["NatureSinistre"];
             
             cboNature.DataSource = dt;
             cboNature.DisplayMember = "libelle";
             cboNature.ValueMember = "id";
 
-            
-            qry = "select id, nom from Caserne;";
-            da = new SQLiteDataAdapter (qry, cx);
-            dt = new DataTable();
-            da.Fill(dt);
+
+
+            dt = dsGlobal.Tables["Caserne"];
 
             cboCaserne.DataSource = dt;
             cboCaserne.DisplayMember = "nom";
             cboCaserne.ValueMember = "id";
 
             //changement libellé n° mission et date de déclenchement
-            qry = "select count(*) from Mission";
-            SQLiteCommand cm = new SQLiteCommand(qry, cx);
-            int nbr = Convert.ToInt32(cm.ExecuteScalar()) + 1;
+            int nbr = dsGlobal.Tables["Mission"].Rows.Count + 1;
 
             lblMission.Text = "Mission n°" + nbr.ToString();
 
             lblDate.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
 
-            cx.Close();
-
+            
         }
 
         private void grpInfoUsager_Enter(object sender, EventArgs e)
@@ -131,18 +111,12 @@ namespace nouvelleMission
             //Remplissage d'une DataTable avec les engins à affecter
 
             //ajout d'une mission en mode déconnecter
-            string qry = "select * from Mission";
 
-            SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
-            DataTable dtMissions = new DataTable();
-            da.Fill(dtMissions);
 
-            cx.Open();
+            int id = dsGlobal.Tables["Mission"].Rows.Count + 1;
 
-            SQLiteCommand cmd = new SQLiteCommand("Select max(id) + 1 from Mission", cx);
-            int id = Convert.ToInt32(cmd.ExecuteScalar());   
+            DataRow drMission = dsGlobal.Tables["Mission"].NewRow();
 
-            DataRow drMission = dtMissions.NewRow();
             drMission["id"] = id;
             drMission["dateHeureDepart"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             /*dr["dateHeureRetour"] = null;*/
@@ -153,50 +127,39 @@ namespace nouvelleMission
             drMission["terminee"] = 0;
             drMission["compteRendu"] = null;
             drMission["idNatureSinistre"] = cboNature.SelectedValue;
-            drMission["idCaserne"] = cboCaserne.SelectedValue; 
+            drMission["idCaserne"] = cboCaserne.SelectedValue;
 
-            dtMissions.Rows.Add(drMission);
-
-            cx.Close();
-
-            /*dgv.DataSource = dt;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;    
-            dgv.Visible = true;*/
-
-            //Test pour voir les modification DataTable (a supprimer)
+            dsGlobal.Tables["Mission"].Rows.Add(drMission);
 
 
-            //Récupération du nombre de véhicule nécessaire pour chaque mission
-            qry = @"select codeTypeEngin, nombre FROM Necessiter where idNatureSinistre = " + cboNature.SelectedValue;
 
-            da = new SQLiteDataAdapter(qry, cx);
-            DataTable dtNecessiter = new DataTable();
-            da.Fill(dtNecessiter);
+            //Récuperation des engins nécessaires
 
-            dgv.DataSource = dtNecessiter;
-            /*dgv.Visible = true;*/
+            DataTable dtEngins = dsGlobal.Tables["Engin"].Clone();
+
+            int idCaserne = Convert.ToInt32(cboCaserne.SelectedValue);
 
 
-            DataTable dtEngins = new DataTable();
-            int i = 0;
-            foreach (DataRow dr in dtNecessiter.Rows)
+            int idSinistre = Convert.ToInt32(cboNature.SelectedValue);
+
+            DataRow[] besoins = dsGlobal.Tables["Necessiter"].Select($"idNatureSinistre = '{idSinistre}'");
+
+            foreach (DataRow besoin in besoins)
             {
-                qry = @"SELECT * FROM Engin 
-                            WHERE   enPanne = 0 AND 
-                                    enMission = 0 AND
-                                    idCaserne = " + cboCaserne.SelectedValue + @" AND 
-                                    codeTypeEngin = '" + dtNecessiter.Rows[i]["codeTypeEngin"] +  @"'
-                                        limit " + dtNecessiter.Rows[i]["nombre"];
+                string codeTypeEngin = besoin["codeTypeEngin"].ToString();
+                int nombre = Convert.ToInt32(besoin["nombre"]);
 
-                i++;
+                string filtre = $"enPanne = 0 AND enMission = 0 AND idCaserne = {idCaserne} AND codeTypeEngin = '{codeTypeEngin}'";
+                DataRow[] enginsDisponibles = dsGlobal.Tables["Engin"].Select(filtre);
 
-                da = new SQLiteDataAdapter(qry, cx);
-
-                da.Fill(dtEngins);
+                int max = Math.Min(nombre, enginsDisponibles.Length);
+                for (int i = 0; i < max; i++)
+                {
+                    dtEngins.ImportRow(enginsDisponibles[i]);
+                }
             }
+
             
-            dgv.DataSource = dtEngins;
-            dgv.Visible = true;
 
             
 
@@ -211,6 +174,39 @@ namespace nouvelleMission
         private void btnAnnuler_Click(object sender, EventArgs e) 
         {
             
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static void initDs() //initialisation du DataSet dsGlobal (a utiliser lors du FormLoad du Form de base)
+        {
+            string[] tables = { "Admin", "Affectation", "Caserne", "Embarquer", "Engin", "Grade", "Habilitation", "Mission", "Mobiliser", "NatureSinistre", "Necessiter", "PartirAvec", "Passer", "Pompier", "TypeEngin", "sqlite_sequence" };
+
+            dsGlobal = new DataSet();
+            SQLiteConnection connec = new SQLiteConnection(@"Data Source = SDIS67.db");
+
+            connec.Open();
+
+            foreach (string table in tables)
+            {
+                string qry = "select * from " + table;
+                SQLiteDataAdapter da = new SQLiteDataAdapter(qry, connec);
+                DataTable dt = new DataTable(table);
+                da.Fill(dt);
+                dsGlobal.Tables.Add(dt);
+            }
+
+            connec.Close();
         }
     }
 }

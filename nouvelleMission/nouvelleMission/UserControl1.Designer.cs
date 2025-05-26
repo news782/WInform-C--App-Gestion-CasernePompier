@@ -46,8 +46,6 @@
             this.btnConstituer = new System.Windows.Forms.Button();
             this.lblCaserne = new System.Windows.Forms.Label();
             this.lblNature = new System.Windows.Forms.Label();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMission
@@ -240,22 +238,12 @@
             this.lblNature.Text = "Nature du sinistre";
             this.lblNature.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(177, 130);
-            this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(328, 169);
-            this.dgv.TabIndex = 20;
-            this.dgv.Visible = false;
-            // 
             // UCnouvelleMission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.dgv);
             this.Controls.Add(this.lblAdresseSinistre);
             this.Controls.Add(this.cboCaserne);
             this.Controls.Add(this.txtVille);
@@ -277,7 +265,6 @@
             this.Name = "UCnouvelleMission";
             this.Size = new System.Drawing.Size(762, 483);
             this.Load += new System.EventHandler(this.UCnouvelleMission_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,6 +290,5 @@
         private System.Windows.Forms.Button btnConstituer;
         private System.Windows.Forms.ComboBox cboCaserne;
         private System.Windows.Forms.ComboBox cboNature;
-        private System.Windows.Forms.DataGridView dgv;
     }
 }
