@@ -222,18 +222,19 @@ namespace Statistiques
             {
                 pnlToutesLesC.Visible = true;
                 pnl1Caserne.Visible = false;
-                rdbEnginUtil.Checked = false;
-                rdbCumul.Checked = false;
             }
             else
             {
                 lblNomCaserne.Text = cboCaserne.Text;
                 pnlToutesLesC.Visible = false;
                 pnl1Caserne.Visible = true;
-                rdbHabilitations.Checked = false;
-                rdbNbIntervention.Checked = false;
-                rdbPompierHabil.Checked = false;
             }
+
+            rdbCumul.Checked = false;
+            rdbEnginUtil.Checked = false;
+            rdbNbIntervention.Checked = false;
+            rdbHabilitations.Checked = false;
+            rdbPompierHabil.Checked = false;
         }
     }
 }

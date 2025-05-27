@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\a21-caserne\\Statistiques\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4A6F9B6-F4B4-4B62-9C7C-536D4AEF94B7}|Statistiques\\Statistiques.csproj|D:\\a21-caserne\\Statistiques\\statistiques\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4A6F9B6-F4B4-4B62-9C7C-536D4AEF94B7}|Statistiques\\Statistiques.csproj|d:\\a21-caserne\\statistiques\\statistiques\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4A6F9B6-F4B4-4B62-9C7C-536D4AEF94B7}|Statistiques\\Statistiques.csproj|solutionrelative:statistiques\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4A6F9B6-F4B4-4B62-9C7C-536D4AEF94B7}|Statistiques\\Statistiques.csproj|d:\\a21-caserne\\statistiques\\statistiques\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F4A6F9B6-F4B4-4B62-9C7C-536D4AEF94B7}|Statistiques\\Statistiques.csproj|D:\\a21-caserne\\Statistiques\\statistiques\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4A6F9B6-F4B4-4B62-9C7C-536D4AEF94B7}|Statistiques\\Statistiques.csproj|solutionrelative:statistiques\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -52,9 +52,9 @@
               "Title": "UserControl1.cs",
               "DocumentMoniker": "D:\\a21-caserne\\Statistiques\\Statistiques\\UserControl1.cs",
               "RelativeDocumentMoniker": "Statistiques\\UserControl1.cs",
-              "ToolTip": "D:\\a21-caserne\\Statistiques\\Statistiques\\UserControl1.cs*",
-              "RelativeToolTip": "Statistiques\\UserControl1.cs*",
-              "ViewState": "AgIAADUAAAAAAAAAAAAgwEAAAAA5AAAAAAAAAA==",
+              "ToolTip": "D:\\a21-caserne\\Statistiques\\Statistiques\\UserControl1.cs",
+              "RelativeToolTip": "Statistiques\\UserControl1.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAAAqwOUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T14:21:18.173Z",
               "EditorCaption": ""
@@ -65,11 +65,10 @@
               "Title": "UserControl1.cs [Design]",
               "DocumentMoniker": "D:\\a21-caserne\\Statistiques\\Statistiques\\UserControl1.cs",
               "RelativeDocumentMoniker": "Statistiques\\UserControl1.cs",
-              "ToolTip": "D:\\a21-caserne\\Statistiques\\Statistiques\\UserControl1.cs [Design]*",
-              "RelativeToolTip": "Statistiques\\UserControl1.cs [Design]*",
+              "ToolTip": "D:\\a21-caserne\\Statistiques\\Statistiques\\UserControl1.cs [Design]",
+              "RelativeToolTip": "Statistiques\\UserControl1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T14:12:31.167Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-14T14:12:31.167Z"
             }
           ]
         }

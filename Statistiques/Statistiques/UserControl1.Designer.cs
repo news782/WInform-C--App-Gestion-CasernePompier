@@ -203,10 +203,10 @@
             // lblNomCaserne
             // 
             this.lblNomCaserne.AutoSize = true;
-            this.lblNomCaserne.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomCaserne.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomCaserne.Location = new System.Drawing.Point(3, 0);
             this.lblNomCaserne.Name = "lblNomCaserne";
-            this.lblNomCaserne.Size = new System.Drawing.Size(0, 20);
+            this.lblNomCaserne.Size = new System.Drawing.Size(0, 28);
             this.lblNomCaserne.TabIndex = 0;
             // 
             // lblCaserne
