@@ -89,6 +89,30 @@ namespace UCmobilisations
                 lbl.Margin = new Padding(11);
                 tblEngins.Controls.Add(lbl, 1, i);
             }
+
+            tblPompier.Controls.Clear();
+            tblPompier.RowStyles.Clear();
+            tblPompier.RowCount = 0;
+
+            for (int i = 0; i < dtPompiers.Rows.Count; i++)
+            {
+                tblPompier.RowCount++;
+                tblPompier.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                PictureBox pic = new PictureBox();
+                pic.Image = Image.FromFile("Images/pompier.png");
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
+                pic.Width = 40;
+                pic.Height = 40;
+                tblPompier.Controls.Add(pic, 0, i);
+
+                Label lbl = new Label();
+                lbl.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                lbl.AutoSize = true;
+                lbl.Text = dtPompiers.Rows[i]["matricule"].ToString();
+                lbl.Margin = new Padding(11);
+                tblPompier.Controls.Add(lbl, 1, i);
+            }
   
 
         }
@@ -118,7 +142,7 @@ namespace UCmobilisations
 
         private void btnFermer_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Parent.Controls.Remove(this);
         }
     }
 }

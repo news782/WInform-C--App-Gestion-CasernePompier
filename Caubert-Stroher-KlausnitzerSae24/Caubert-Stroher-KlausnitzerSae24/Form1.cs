@@ -12,6 +12,7 @@ using Caubert_Stroher_KlausnitzerSae24;
 using nouvelleMission;
 using E = Engin;
 using Statistiques;
+using m = UCmobilisations;
 
 namespace Caubert_Stroher_KlausnitzerSae24
 {
@@ -21,6 +22,7 @@ namespace Caubert_Stroher_KlausnitzerSae24
         {
             InitializeComponent();
             MesDatas.initDs(); //initialise le DataSet de la classe mesDatas
+
         }
 
         private void frmSoldatFeu_Load(object sender, EventArgs e)
@@ -32,9 +34,23 @@ namespace Caubert_Stroher_KlausnitzerSae24
         {
             panel1.Controls.Clear();
             UCnouvelleMission nv = new UCnouvelleMission(MesDatas.DsGlobal);
+
+            nv.MissionAjouter += Uc_missionAjouter;
+            
+
             panel1.Controls.Add(nv);
             nv.Dock = DockStyle.Fill;
             nv.Show();
+        }
+
+        private void Uc_missionAjouter(object sender, EventArgs e)
+        {
+            var uc = sender as UCnouvelleMission;
+            //donne accès au champs dtEngins et dtPompier du UCnouvelleMission
+            m.UCmobilisations mobil = new m.UCmobilisations(uc.dtEngins, uc.dtPompier);
+            panel1.Controls.Clear();
+            panel1.Controls.Add(mobil);
+            mobil.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,12 +70,13 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            Application.Exit();     
+            Application.Exit();      
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
+            
         }
 
         private void btnStats_Click(object sender, EventArgs e)

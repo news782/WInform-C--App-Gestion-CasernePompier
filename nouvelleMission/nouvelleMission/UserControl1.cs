@@ -17,20 +17,27 @@ namespace nouvelleMission
     public partial class UCnouvelleMission: UserControl
     {
         static DataSet dsGlobal;
-        public EventHandler MissionAjouter;
+        public event EventHandler MissionAjouter;
+        public DataTable dtPompier { get; private set; } = new DataTable();
+        public DataTable dtEngins { get; private set; } = new DataTable();
 
         public UCnouvelleMission()// A SUPPIMER
         {
             InitializeComponent();
             //  /!\ A SUPPRIMER ABSOLUEMENT /!\
             initDs();
-            
+            dtEngins = dsGlobal.Tables["Engin"].Clone();
+            dtPompier = dsGlobal.Tables["Pompier"].Clone();
+
         }
 
         public UCnouvelleMission(DataSet ds)
         {
             InitializeComponent();
             dsGlobal = ds;
+
+            dtEngins = dsGlobal.Tables["Engin"].Clone();
+            dtPompier = dsGlobal.Tables["Pompier"].Clone();
         }
 
 
@@ -136,7 +143,7 @@ namespace nouvelleMission
 
             //Récuperation des engins nécessaires
 
-            DataTable dtEngins = dsGlobal.Tables["Engin"].Clone();
+            dtEngins = dsGlobal.Tables["Engin"].Clone();
 
             int idCaserne = Convert.ToInt32(cboCaserne.SelectedValue);
 
