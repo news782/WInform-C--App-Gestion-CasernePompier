@@ -64,7 +64,6 @@ namespace Statistiques
             rdbNbIntervention.Text = "Nombre d'interventions par type \nde sinistre";
             rdbPompierHabil.Text = "Liste des pompiers \npar habilitation";
 
-            pbLogo.Image = Properties.Resources.Logo_FireBase_HQ_removebg_preview;
             pbStat.Image = Properties.Resources.stats_removebg_preview;
 
         }

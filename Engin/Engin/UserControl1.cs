@@ -70,7 +70,8 @@ namespace Engin
             btnAvant.Image = Properties.Resources.boutonEngin2_removebg_preview;
             btnApres.Image = Properties.Resources.boutonEngin2R;
             btnDernier.Image = Properties.Resources.boutonEngin_removebg_preview__1_;
-            pbLogo.Image = Properties.Resources.Logo_FireBase_HQ_removebg_preview;
+            /*pbLogo.Image = Properties.Resources.Logo_FireBase_HQ_removebg_preview;*/
+
         }
 
         private void btnPrem_Click(object sender, EventArgs e)

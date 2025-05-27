@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Security.Cryptography.X509Certificates;
 
 namespace UCmobilisations
 {
@@ -15,7 +16,9 @@ namespace UCmobilisations
     {
         DataTable dtEngins;
         DataTable dtPompiers;
-        SQLiteConnection cx;
+
+
+        static DataSet dsGlobal;
 
         public UCmobilisations(DataTable datatableEngins, DataTable datatablePompier)
         {
@@ -27,49 +30,38 @@ namespace UCmobilisations
         public UCmobilisations() //ce Constructeurs sera a supprimer ultérieurement 
         {
             InitializeComponent();
+            initDs();
 
 
-            string chaine = "Data Source=SDIS67.db";
-
-            try
-            {
-                cx = new SQLiteConnection(chaine);
-                cx.Open();
-            }
-
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            cx.Close();
-
-            dtEngins = new DataTable();
-            dtPompiers = new DataTable();
 
 
-            string qry = @"select codeTypeEngin, nombre FROM Necessiter where idNatureSinistre = 9;";
-
-
-            
-            // /!\ NE PAS OUBLIER DES CHANGER LES REQUETES DANS L'AUTRE UC /!\
-
-            SQLiteCommand cmd = new SQLiteCommand(qry, cx);
-
-            SQLiteDataAdapter daEngins = new SQLiteDataAdapter(cmd);
-            daEngins.Fill(dtEngins);
-
-
-            //Remplissage d'une DataTable avec les Pompiers à affecter
-
-            qry = @"";
-
-
-            cmd = new SQLiteCommand(qry, cx);
-
-            SQLiteDataAdapter daPompiers = new SQLiteDataAdapter(cmd);  
-            daPompiers.Fill(dtPompiers);
         }
+
+        public static void initDs() //initialisation du DataSet dsGlobal (a utiliser lors du FormLoad du Form de base)
+        {
+            string[] tables = { "Admin", "Affectation", "Caserne", "Embarquer", "Engin", "Grade", "Habilitation", "Mission", "Mobiliser", "NatureSinistre", "Necessiter", "PartirAvec", "Passer", "Pompier", "TypeEngin", "sqlite_sequence" };
+
+            dsGlobal = new DataSet();
+            SQLiteConnection connec = new SQLiteConnection(@"Data Source = SDIS67.db");
+
+            connec.Open();
+
+            foreach (string table in tables)
+            {
+                string qry = "select * from " + table;
+                SQLiteDataAdapter da = new SQLiteDataAdapter(qry, connec);
+                DataTable dt = new DataTable(table);
+                da.Fill(dt);
+                dsGlobal.Tables.Add(dt);
+            }
+
+            connec.Close();
+
+
+
+        }
+
+        //A SUPPRIMER
 
         private void UCmobilisations_Load(object sender, EventArgs e)
         {
@@ -77,15 +69,12 @@ namespace UCmobilisations
             tblEngins.RowStyles.Clear();
             tblEngins.RowCount = 0;
 
-            
-            for(int i = 0;  i < dtEngins.Rows.Count;i++)
-            {
-                
 
+            for (int i = 0; i < dtEngins.Rows.Count; i++)
+            {
                 tblEngins.RowCount++;
                 tblEngins.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-                //Ajout des images
                 PictureBox pic = new PictureBox();
                 pic.Image = Image.FromFile("Images/engin.png");
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -94,13 +83,13 @@ namespace UCmobilisations
                 tblEngins.Controls.Add(pic, 0, i);
 
                 Label lbl = new Label();
-                lbl.Font = new Font("Segoe UI", 12, FontStyle.Bold); 
+                lbl.Font = new Font("Segoe UI", 12, FontStyle.Bold);
                 lbl.AutoSize = true;
                 lbl.Text = dtEngins.Rows[i]["codeTypeEngin"].ToString();
                 lbl.Margin = new Padding(11);
                 tblEngins.Controls.Add(lbl, 1, i);
-
             }
+  
 
         }
 

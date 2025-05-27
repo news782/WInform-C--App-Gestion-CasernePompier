@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCStats));
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.lblStat = new System.Windows.Forms.Label();
             this.pnlCaserne = new System.Windows.Forms.Panel();
+            this.pbStat = new System.Windows.Forms.PictureBox();
             this.pnlToutesLesC = new System.Windows.Forms.Panel();
             this.rdbPompierHabil = new System.Windows.Forms.RadioButton();
             this.rdbHabilitations = new System.Windows.Forms.RadioButton();
@@ -46,18 +48,19 @@
             this.pnlStats = new System.Windows.Forms.Panel();
             this.lblChoixStats = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pbStat = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlCaserne.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStat)).BeginInit();
             this.pnlToutesLesC.SuspendLayout();
             this.pnl1Caserne.SuspendLayout();
             this.pnlStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStat)).BeginInit();
             this.SuspendLayout();
             // 
             // pbLogo
             // 
+            this.pbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.BackgroundImage")));
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbLogo.Location = new System.Drawing.Point(745, 0);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(255, 105);
@@ -71,7 +74,7 @@
             this.lblStat.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStat.Location = new System.Drawing.Point(70, 36);
             this.lblStat.Name = "lblStat";
-            this.lblStat.Size = new System.Drawing.Size(141, 31);
+            this.lblStat.Size = new System.Drawing.Size(114, 25);
             this.lblStat.TabIndex = 1;
             this.lblStat.Text = "Statistiques";
             // 
@@ -88,6 +91,15 @@
             this.pnlCaserne.Name = "pnlCaserne";
             this.pnlCaserne.Size = new System.Drawing.Size(292, 506);
             this.pnlCaserne.TabIndex = 2;
+            // 
+            // pbStat
+            // 
+            this.pbStat.Location = new System.Drawing.Point(0, 328);
+            this.pbStat.Name = "pbStat";
+            this.pbStat.Size = new System.Drawing.Size(291, 177);
+            this.pbStat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStat.TabIndex = 5;
+            this.pbStat.TabStop = false;
             // 
             // pnlToutesLesC
             // 
@@ -108,7 +120,7 @@
             this.rdbPompierHabil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbPompierHabil.Location = new System.Drawing.Point(7, 142);
             this.rdbPompierHabil.Name = "rdbPompierHabil";
-            this.rdbPompierHabil.Size = new System.Drawing.Size(17, 16);
+            this.rdbPompierHabil.Size = new System.Drawing.Size(14, 13);
             this.rdbPompierHabil.TabIndex = 3;
             this.rdbPompierHabil.TabStop = true;
             this.rdbPompierHabil.UseVisualStyleBackColor = true;
@@ -120,7 +132,7 @@
             this.rdbHabilitations.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbHabilitations.Location = new System.Drawing.Point(7, 92);
             this.rdbHabilitations.Name = "rdbHabilitations";
-            this.rdbHabilitations.Size = new System.Drawing.Size(237, 24);
+            this.rdbHabilitations.Size = new System.Drawing.Size(188, 19);
             this.rdbHabilitations.TabIndex = 4;
             this.rdbHabilitations.TabStop = true;
             this.rdbHabilitations.Text = "Habilitations les plus sollicitées";
@@ -134,7 +146,7 @@
             this.rdbNbIntervention.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbNbIntervention.Location = new System.Drawing.Point(7, 42);
             this.rdbNbIntervention.Name = "rdbNbIntervention";
-            this.rdbNbIntervention.Size = new System.Drawing.Size(17, 16);
+            this.rdbNbIntervention.Size = new System.Drawing.Size(14, 13);
             this.rdbNbIntervention.TabIndex = 5;
             this.rdbNbIntervention.TabStop = true;
             this.rdbNbIntervention.UseVisualStyleBackColor = true;
@@ -146,7 +158,7 @@
             this.lblTC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTC.Location = new System.Drawing.Point(3, 0);
             this.lblTC.Name = "lblTC";
-            this.lblTC.Size = new System.Drawing.Size(141, 20);
+            this.lblTC.Size = new System.Drawing.Size(113, 15);
             this.lblTC.TabIndex = 3;
             this.lblTC.Text = "Toutes les casernes :";
             // 
@@ -168,7 +180,7 @@
             this.rdbCumul.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbCumul.Location = new System.Drawing.Point(7, 62);
             this.rdbCumul.Name = "rdbCumul";
-            this.rdbCumul.Size = new System.Drawing.Size(227, 24);
+            this.rdbCumul.Size = new System.Drawing.Size(185, 19);
             this.rdbCumul.TabIndex = 2;
             this.rdbCumul.TabStop = true;
             this.rdbCumul.Text = "Cumul d\'utilisation des engins";
@@ -181,7 +193,7 @@
             this.rdbEnginUtil.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbEnginUtil.Location = new System.Drawing.Point(7, 32);
             this.rdbEnginUtil.Name = "rdbEnginUtil";
-            this.rdbEnginUtil.Size = new System.Drawing.Size(175, 24);
+            this.rdbEnginUtil.Size = new System.Drawing.Size(141, 19);
             this.rdbEnginUtil.TabIndex = 1;
             this.rdbEnginUtil.TabStop = true;
             this.rdbEnginUtil.Text = "Engins les plus utilisés";
@@ -194,7 +206,7 @@
             this.lblNomCaserne.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomCaserne.Location = new System.Drawing.Point(3, 0);
             this.lblNomCaserne.Name = "lblNomCaserne";
-            this.lblNomCaserne.Size = new System.Drawing.Size(0, 20);
+            this.lblNomCaserne.Size = new System.Drawing.Size(0, 15);
             this.lblNomCaserne.TabIndex = 0;
             // 
             // lblCaserne
@@ -203,7 +215,7 @@
             this.lblCaserne.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaserne.Location = new System.Drawing.Point(13, 18);
             this.lblCaserne.Name = "lblCaserne";
-            this.lblCaserne.Size = new System.Drawing.Size(180, 25);
+            this.lblCaserne.Size = new System.Drawing.Size(149, 20);
             this.lblCaserne.TabIndex = 2;
             this.lblCaserne.Text = "Choix de la caserne :";
             // 
@@ -212,7 +224,7 @@
             this.lblChoix.AutoSize = true;
             this.lblChoix.Location = new System.Drawing.Point(7, 83);
             this.lblChoix.Name = "lblChoix";
-            this.lblChoix.Size = new System.Drawing.Size(83, 25);
+            this.lblChoix.Size = new System.Drawing.Size(68, 20);
             this.lblChoix.TabIndex = 1;
             this.lblChoix.Text = "Caserne :";
             // 
@@ -222,7 +234,7 @@
             this.cboCaserne.FormattingEnabled = true;
             this.cboCaserne.Location = new System.Drawing.Point(96, 80);
             this.cboCaserne.Name = "cboCaserne";
-            this.cboCaserne.Size = new System.Drawing.Size(193, 33);
+            this.cboCaserne.Size = new System.Drawing.Size(193, 27);
             this.cboCaserne.TabIndex = 0;
             this.cboCaserne.SelectedIndexChanged += new System.EventHandler(this.cboCaserne_SelectedIndexChanged);
             // 
@@ -242,7 +254,7 @@
             this.lblChoixStats.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChoixStats.Location = new System.Drawing.Point(18, 17);
             this.lblChoixStats.Name = "lblChoixStats";
-            this.lblChoixStats.Size = new System.Drawing.Size(310, 25);
+            this.lblChoixStats.Size = new System.Drawing.Size(252, 20);
             this.lblChoixStats.TabIndex = 1;
             this.lblChoixStats.Text = "Statistiques que vous avez choisies :";
             // 
@@ -257,18 +269,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(694, 455);
             this.dataGridView1.TabIndex = 0;
             // 
-            // pbStat
-            // 
-            this.pbStat.Location = new System.Drawing.Point(0, 328);
-            this.pbStat.Name = "pbStat";
-            this.pbStat.Size = new System.Drawing.Size(291, 177);
-            this.pbStat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbStat.TabIndex = 5;
-            this.pbStat.TabStop = false;
-            // 
             // UCStats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.Controls.Add(this.pnlStats);
@@ -284,6 +287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlCaserne.ResumeLayout(false);
             this.pnlCaserne.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStat)).EndInit();
             this.pnlToutesLesC.ResumeLayout(false);
             this.pnlToutesLesC.PerformLayout();
             this.pnl1Caserne.ResumeLayout(false);
@@ -291,7 +295,6 @@
             this.pnlStats.ResumeLayout(false);
             this.pnlStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

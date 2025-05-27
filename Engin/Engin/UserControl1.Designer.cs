@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Engin));
             this.cboCaserne = new System.Windows.Forms.ComboBox();
             this.lblCaserne = new System.Windows.Forms.Label();
             this.btnPrem = new System.Windows.Forms.Button();
@@ -60,7 +61,7 @@
             this.cboCaserne.Location = new System.Drawing.Point(94, 0);
             this.cboCaserne.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboCaserne.Name = "cboCaserne";
-            this.cboCaserne.Size = new System.Drawing.Size(715, 33);
+            this.cboCaserne.Size = new System.Drawing.Size(715, 27);
             this.cboCaserne.TabIndex = 1;
             this.cboCaserne.SelectedIndexChanged += new System.EventHandler(this.cboCaserne_SelectedIndexChanged);
             // 
@@ -71,7 +72,7 @@
             this.lblCaserne.ForeColor = System.Drawing.Color.Black;
             this.lblCaserne.Location = new System.Drawing.Point(5, 3);
             this.lblCaserne.Name = "lblCaserne";
-            this.lblCaserne.Size = new System.Drawing.Size(89, 25);
+            this.lblCaserne.Size = new System.Drawing.Size(72, 20);
             this.lblCaserne.TabIndex = 0;
             this.lblCaserne.Text = "Caserne :";
             // 
@@ -136,7 +137,7 @@
             this.lblNum.AutoSize = true;
             this.lblNum.Location = new System.Drawing.Point(8, 42);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(86, 25);
+            this.lblNum.Size = new System.Drawing.Size(70, 20);
             this.lblNum.TabIndex = 0;
             this.lblNum.Text = "Numéro :";
             // 
@@ -147,7 +148,7 @@
             this.lblNum2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblNum2.Location = new System.Drawing.Point(122, 42);
             this.lblNum2.Name = "lblNum2";
-            this.lblNum2.Size = new System.Drawing.Size(0, 25);
+            this.lblNum2.Size = new System.Drawing.Size(0, 20);
             this.lblNum2.TabIndex = 1;
             this.lblNum2.TextChanged += new System.EventHandler(this.lblNum2_TextChanged);
             // 
@@ -156,7 +157,7 @@
             this.lblMission.AutoSize = true;
             this.lblMission.Location = new System.Drawing.Point(21, 248);
             this.lblMission.Name = "lblMission";
-            this.lblMission.Size = new System.Drawing.Size(113, 25);
+            this.lblMission.Size = new System.Drawing.Size(92, 20);
             this.lblMission.TabIndex = 2;
             this.lblMission.Text = "-en mission :";
             // 
@@ -165,7 +166,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(8, 99);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(162, 25);
+            this.lblDate.Size = new System.Drawing.Size(136, 20);
             this.lblDate.TabIndex = 3;
             this.lblDate.Text = "Date de réception :";
             // 
@@ -174,7 +175,7 @@
             this.lblPanne.AutoSize = true;
             this.lblPanne.Location = new System.Drawing.Point(21, 298);
             this.lblPanne.Name = "lblPanne";
-            this.lblPanne.Size = new System.Drawing.Size(101, 25);
+            this.lblPanne.Size = new System.Drawing.Size(83, 20);
             this.lblPanne.TabIndex = 4;
             this.lblPanne.Text = "-en panne :";
             // 
@@ -186,7 +187,7 @@
             this.chkPanne.Location = new System.Drawing.Point(201, 303);
             this.chkPanne.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.chkPanne.Name = "chkPanne";
-            this.chkPanne.Size = new System.Drawing.Size(18, 17);
+            this.chkPanne.Size = new System.Drawing.Size(15, 14);
             this.chkPanne.TabIndex = 5;
             this.chkPanne.UseVisualStyleBackColor = true;
             this.chkPanne.CheckedChanged += new System.EventHandler(this.chkPanne_CheckedChanged);
@@ -199,7 +200,7 @@
             this.chkMission.Location = new System.Drawing.Point(201, 253);
             this.chkMission.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.chkMission.Name = "chkMission";
-            this.chkMission.Size = new System.Drawing.Size(18, 17);
+            this.chkMission.Size = new System.Drawing.Size(15, 14);
             this.chkMission.TabIndex = 6;
             this.chkMission.UseVisualStyleBackColor = true;
             // 
@@ -210,7 +211,7 @@
             this.lblDate2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblDate2.Location = new System.Drawing.Point(176, 99);
             this.lblDate2.Name = "lblDate2";
-            this.lblDate2.Size = new System.Drawing.Size(0, 25);
+            this.lblDate2.Size = new System.Drawing.Size(0, 20);
             this.lblDate2.TabIndex = 7;
             // 
             // pnlEngins
@@ -238,13 +239,13 @@
             this.lblStatut.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatut.Location = new System.Drawing.Point(8, 213);
             this.lblStatut.Name = "lblStatut";
-            this.lblStatut.Size = new System.Drawing.Size(163, 25);
+            this.lblStatut.Size = new System.Drawing.Size(132, 20);
             this.lblStatut.TabIndex = 9;
             this.lblStatut.Text = "Statut de l\'engin :";
             // 
             // pb1
             // 
-            this.pb1.Location = new System.Drawing.Point(608, 0);
+            this.pb1.Location = new System.Drawing.Point(511, 117);
             this.pb1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(201, 150);
@@ -258,22 +259,24 @@
             this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.Location = new System.Drawing.Point(70, 36);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(209, 31);
+            this.lblTitre.Size = new System.Drawing.Size(171, 25);
             this.lblTitre.TabIndex = 10;
             this.lblTitre.Text = "Engins enregistrés";
             // 
             // pbLogo
             // 
+            this.pbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.BackgroundImage")));
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbLogo.Location = new System.Drawing.Point(745, 0);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(255, 105);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 11;
             this.pbLogo.TabStop = false;
             // 
             // Engin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.Controls.Add(this.pbLogo);

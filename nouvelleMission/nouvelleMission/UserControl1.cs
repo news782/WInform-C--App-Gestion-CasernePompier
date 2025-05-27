@@ -17,6 +17,7 @@ namespace nouvelleMission
     public partial class UCnouvelleMission: UserControl
     {
         static DataSet dsGlobal;
+        public EventHandler MissionAjouter;
 
         public UCnouvelleMission()// A SUPPIMER
         {
@@ -157,8 +158,12 @@ namespace nouvelleMission
                 {
                     dtEngins.ImportRow(enginsDisponibles[i]);
                 }
-            }            
+            }
+            
+            //TO-DO, lister les pompier a envoyer en mission
 
+
+            MissionAjouter?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnFermer_Click(object sender, EventArgs e)

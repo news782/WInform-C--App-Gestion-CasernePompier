@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using Caubert_Stroher_KlausnitzerSae24;
 using nouvelleMission;
+using E = Engin;
+using Statistiques;
 
 namespace Caubert_Stroher_KlausnitzerSae24
 {
@@ -23,11 +25,12 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void frmSoldatFeu_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = MesDatas.DsGlobal.Tables["Mission"];
+            
         }
 
         private void btnMission_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
             UCnouvelleMission nv = new UCnouvelleMission(MesDatas.DsGlobal);
             panel1.Controls.Add(nv);
             nv.Dock = DockStyle.Fill;
@@ -41,7 +44,7 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = MesDatas.DsGlobal.Tables["Mission"];
+            //dataGridView1.DataSource = MesDatas.DsGlobal.Tables["Mission"];
         }
 
         private void grpbtnVolet_Enter(object sender, EventArgs e)
@@ -51,7 +54,29 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit();     
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            UCStats stats = new UCStats(Connexion.Connec);
+            panel1.Controls.Add(stats);
+            stats.Dock = DockStyle.Fill;
+            stats.Show();
+        }
+
+        private void btnEngins_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            E.Engin UCengin = new E.Engin(Connexion.Connec);
+            panel1.Controls.Add(UCengin);
+            UCengin.Show();
         }
     }
 }

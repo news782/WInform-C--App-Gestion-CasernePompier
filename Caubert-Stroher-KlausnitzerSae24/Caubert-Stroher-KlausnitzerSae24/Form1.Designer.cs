@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSoldatFeu));
             this.grpbtnVolet = new System.Windows.Forms.GroupBox();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnStats = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnEngins = new System.Windows.Forms.Button();
-            this.btnMission = new System.Windows.Forms.Button();
             this.btnTDB = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnMission = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grpbtnVolet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpbtnVolet
@@ -48,7 +47,6 @@
             this.grpbtnVolet.Controls.Add(this.btnStats);
             this.grpbtnVolet.Controls.Add(this.btnPersonnel);
             this.grpbtnVolet.Controls.Add(this.btnEngins);
-            this.grpbtnVolet.Controls.Add(this.btnMission);
             this.grpbtnVolet.Controls.Add(this.btnTDB);
             this.grpbtnVolet.Location = new System.Drawing.Point(35, 27);
             this.grpbtnVolet.Name = "grpbtnVolet";
@@ -69,16 +67,17 @@
             // 
             // btnStats
             // 
-            this.btnStats.Location = new System.Drawing.Point(11, 228);
+            this.btnStats.Location = new System.Drawing.Point(11, 180);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(196, 42);
             this.btnStats.TabIndex = 4;
             this.btnStats.Text = "Statistique";
             this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
             // 
             // btnPersonnel
             // 
-            this.btnPersonnel.Location = new System.Drawing.Point(11, 180);
+            this.btnPersonnel.Location = new System.Drawing.Point(11, 132);
             this.btnPersonnel.Name = "btnPersonnel";
             this.btnPersonnel.Size = new System.Drawing.Size(196, 42);
             this.btnPersonnel.TabIndex = 3;
@@ -87,22 +86,13 @@
             // 
             // btnEngins
             // 
-            this.btnEngins.Location = new System.Drawing.Point(11, 132);
+            this.btnEngins.Location = new System.Drawing.Point(11, 84);
             this.btnEngins.Name = "btnEngins";
             this.btnEngins.Size = new System.Drawing.Size(196, 42);
             this.btnEngins.TabIndex = 2;
             this.btnEngins.Text = "Gestion des engins";
             this.btnEngins.UseVisualStyleBackColor = true;
-            // 
-            // btnMission
-            // 
-            this.btnMission.Location = new System.Drawing.Point(11, 84);
-            this.btnMission.Name = "btnMission";
-            this.btnMission.Size = new System.Drawing.Size(196, 42);
-            this.btnMission.TabIndex = 1;
-            this.btnMission.Text = "Nouvelle Mission";
-            this.btnMission.UseVisualStyleBackColor = true;
-            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
+            this.btnEngins.Click += new System.EventHandler(this.btnEngins_Click);
             // 
             // btnTDB
             // 
@@ -113,35 +103,39 @@
             this.btnTDB.Text = "Tableau de bord";
             this.btnTDB.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // btnMission
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 545);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(966, 168);
-            this.dataGridView1.TabIndex = 2;
+            this.btnMission.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMission.BackgroundImage")));
+            this.btnMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMission.Location = new System.Drawing.Point(35, 545);
+            this.btnMission.Name = "btnMission";
+            this.btnMission.Size = new System.Drawing.Size(218, 182);
+            this.btnMission.TabIndex = 1;
+            this.btnMission.UseVisualStyleBackColor = true;
+            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(259, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 512);
+            this.panel1.Size = new System.Drawing.Size(1000, 700);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmSoldatFeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1209, 791);
+            this.ClientSize = new System.Drawing.Size(1273, 744);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grpbtnVolet);
+            this.Controls.Add(this.btnMission);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSoldatFeu";
-            this.Text = "Les soldats du feu";
+            this.Text = "FireBase HQ";
             this.Load += new System.EventHandler(this.frmSoldatFeu_Load);
             this.grpbtnVolet.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,7 +149,6 @@
         private System.Windows.Forms.Button btnMission;
         private System.Windows.Forms.Button btnTDB;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
     }
 }

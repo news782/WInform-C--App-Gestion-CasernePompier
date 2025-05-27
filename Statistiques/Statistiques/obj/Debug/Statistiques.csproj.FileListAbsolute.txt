@@ -10,3 +10,15 @@ C:\Users\Eleve\Documents\A21\D21\Statistiques\Statistiques\obj\Debug\Statisti.94
 C:\Users\Eleve\Documents\A21\D21\Statistiques\Statistiques\obj\Debug\Statistiques.dll
 C:\Users\Eleve\Documents\A21\D21\Statistiques\Statistiques\obj\Debug\Statistiques.pdb
 C:\Users\Eleve\Documents\A21\D21\Statistiques\Statistiques\obj\Debug\Statistiques.Properties.Resources.resources
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\bin\Debug\Statistiques.dll
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\bin\Debug\Statistiques.pdb
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\bin\Debug\System.Data.SQLite.dll
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\bin\Debug\System.Data.SQLite.xml
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.csproj.AssemblyReference.cache
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.Properties.Resources.resources
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.UCStats.resources
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.csproj.GenerateResource.cache
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.csproj.CoreCompileInputs.cache
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statisti.9465184F.Up2Date
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.dll
+C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.pdb
