@@ -61,8 +61,8 @@ namespace Statistiques
             
             cboCaserne.SelectedIndex = -1;
 
-            rdbNbIntervention.Text = "Nombre d'interventions par type \nde sinistre";
-            rdbPompierHabil.Text = "Liste des pompiers \npar habilitation";
+            rdbNbIntervention.Text = "Nombre d'interventions par\n type de sinistre";
+            rdbPompierHabil.Text = "Liste des pompiers par\n habilitation";
 
             pbStat.Image = Properties.Resources.stats_removebg_preview;
 
@@ -222,18 +222,19 @@ namespace Statistiques
             {
                 pnlToutesLesC.Visible = true;
                 pnl1Caserne.Visible = false;
-                rdbEnginUtil.Checked = false;
-                rdbCumul.Checked = false;
             }
             else
             {
                 lblNomCaserne.Text = cboCaserne.Text;
                 pnlToutesLesC.Visible = false;
                 pnl1Caserne.Visible = true;
-                rdbHabilitations.Checked = false;
-                rdbNbIntervention.Checked = false;
-                rdbPompierHabil.Checked = false;
             }
+
+            rdbCumul.Checked = false;
+            rdbEnginUtil.Checked = false;
+            rdbNbIntervention.Checked = false;
+            rdbHabilitations.Checked = false;
+            rdbPompierHabil.Checked = false;
         }
     }
 }

@@ -22,3 +22,15 @@ C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiq
 C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statisti.9465184F.Up2Date
 C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.dll
 C:\Users\julot\Desktop\SAE A21-D21\Statistiques\Statistiques\obj\Debug\Statistiques.pdb
+D:\a21-caserne\Statistiques\Statistiques\bin\Debug\Statistiques.dll
+D:\a21-caserne\Statistiques\Statistiques\bin\Debug\Statistiques.pdb
+D:\a21-caserne\Statistiques\Statistiques\bin\Debug\System.Data.SQLite.dll
+D:\a21-caserne\Statistiques\Statistiques\bin\Debug\System.Data.SQLite.xml
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.csproj.AssemblyReference.cache
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.Properties.Resources.resources
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.UCStats.resources
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.csproj.GenerateResource.cache
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.csproj.CoreCompileInputs.cache
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statisti.9465184F.Up2Date
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.dll
+D:\a21-caserne\Statistiques\Statistiques\obj\Debug\Statistiques.pdb
