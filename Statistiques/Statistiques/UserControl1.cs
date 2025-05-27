@@ -61,8 +61,8 @@ namespace Statistiques
             
             cboCaserne.SelectedIndex = -1;
 
-            rdbNbIntervention.Text = "Nombre d'interventions par type \nde sinistre";
-            rdbPompierHabil.Text = "Liste des pompiers \npar habilitation";
+            rdbNbIntervention.Text = "Nombre d'interventions par\n type de sinistre";
+            rdbPompierHabil.Text = "Liste des pompiers par\n habilitation";
 
             pbStat.Image = Properties.Resources.stats_removebg_preview;
 

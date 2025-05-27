@@ -15,7 +15,7 @@ namespace Engin
     {
 
         
-
+        
         public Engin()
         {
             InitializeComponent();
@@ -50,6 +50,7 @@ namespace Engin
 
         private void Engin_Load(object sender, EventArgs e)
         {
+            string texteStatut = lblStatut.Text;
 
             string qry = "Select id, nom From Caserne ";
             SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
@@ -111,6 +112,8 @@ namespace Engin
             DataTable dt2 = new DataTable();
             da.Fill(dt2);
 
+            lblStatut.Text = "Statut de l'engin : Disponible";
+
             bs.DataSource = dt2;
 
             // Rafraîchir les champs
@@ -126,10 +129,21 @@ namespace Engin
 
             bs.MoveFirst();
         }
+        
+        
 
         private void chkPanne_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkPanne.Checked)
+            {
+                lblPanne.Visible = true;
+                lblStatut.Text = "Statut de l'engin : Non disponible";
+            }
+            else
+            {
+                lblPanne.Visible = false;
+                lblStatut.Text = "Statut de l'engin : Disponible";
+            }
         }
 
         private void lblNum2_TextChanged(object sender, EventArgs e)
@@ -179,6 +193,20 @@ namespace Engin
             else
             {
                 pb1.Image = null;
+            }
+        }
+
+        private void chkMission_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMission.Checked)
+            {
+                lblMission.Visible = true;
+                lblStatut.Text = "Statut de l'engin : Non disponible";
+            }
+            else
+            {
+                lblMission.Visible = false;
+                lblStatut.Text = "Statut de l'engin : Disponible";
             }
         }
     }
