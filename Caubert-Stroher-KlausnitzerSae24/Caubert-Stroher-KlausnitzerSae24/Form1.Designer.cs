@@ -28,25 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSoldatFeu));
             this.grpbtnVolet = new System.Windows.Forms.GroupBox();
-            this.btnQuitter = new System.Windows.Forms.Button();
-            this.btnStats = new System.Windows.Forms.Button();
+            this.picIndicator = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnEngins = new System.Windows.Forms.Button();
+            this.btnStats = new System.Windows.Forms.Button();
+            this.btnQuitter = new System.Windows.Forms.Button();
             this.btnTDB = new System.Windows.Forms.Button();
-            this.btnMission = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMission = new System.Windows.Forms.Button();
+            this.timeIndicator = new System.Windows.Forms.Timer(this.components);
             this.grpbtnVolet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIndicator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // grpbtnVolet
             // 
-            this.grpbtnVolet.BackColor = System.Drawing.Color.IndianRed;
-            this.grpbtnVolet.Controls.Add(this.btnQuitter);
-            this.grpbtnVolet.Controls.Add(this.btnStats);
+            this.grpbtnVolet.BackColor = System.Drawing.Color.FloralWhite;
+            this.grpbtnVolet.Controls.Add(this.picIndicator);
+            this.grpbtnVolet.Controls.Add(this.picLogo);
             this.grpbtnVolet.Controls.Add(this.btnPersonnel);
             this.grpbtnVolet.Controls.Add(this.btnEngins);
+            this.grpbtnVolet.Controls.Add(this.btnStats);
+            this.grpbtnVolet.Controls.Add(this.btnQuitter);
             this.grpbtnVolet.Controls.Add(this.btnTDB);
             this.grpbtnVolet.Location = new System.Drawing.Point(35, 27);
             this.grpbtnVolet.Name = "grpbtnVolet";
@@ -55,64 +63,79 @@
             this.grpbtnVolet.TabStop = false;
             this.grpbtnVolet.Enter += new System.EventHandler(this.grpbtnVolet_Enter);
             // 
-            // btnQuitter
+            // picIndicator
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(11, 464);
-            this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(196, 42);
-            this.btnQuitter.TabIndex = 5;
-            this.btnQuitter.Text = "Quitter";
-            this.btnQuitter.UseVisualStyleBackColor = true;
-            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            this.picIndicator.Image = global::Caubert_Stroher_KlausnitzerSae24.Properties.Resources.flammeLogo;
+            this.picIndicator.Location = new System.Drawing.Point(5, 43);
+            this.picIndicator.Name = "picIndicator";
+            this.picIndicator.Size = new System.Drawing.Size(38, 37);
+            this.picIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIndicator.TabIndex = 7;
+            this.picIndicator.TabStop = false;
             // 
-            // btnStats
+            // picLogo
             // 
-            this.btnStats.Location = new System.Drawing.Point(11, 180);
-            this.btnStats.Name = "btnStats";
-            this.btnStats.Size = new System.Drawing.Size(196, 42);
-            this.btnStats.TabIndex = 4;
-            this.btnStats.Text = "Statistiques";
-            this.btnStats.UseVisualStyleBackColor = true;
-            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            this.picLogo.Image = global::Caubert_Stroher_KlausnitzerSae24.Properties.Resources.logoFireBaseHQ;
+            this.picLogo.Location = new System.Drawing.Point(11, 377);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(196, 63);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 6;
+            this.picLogo.TabStop = false;
             // 
             // btnPersonnel
             // 
-            this.btnPersonnel.Location = new System.Drawing.Point(11, 132);
+            this.btnPersonnel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPersonnel.Location = new System.Drawing.Point(43, 199);
             this.btnPersonnel.Name = "btnPersonnel";
-            this.btnPersonnel.Size = new System.Drawing.Size(196, 42);
+            this.btnPersonnel.Size = new System.Drawing.Size(169, 83);
             this.btnPersonnel.TabIndex = 3;
             this.btnPersonnel.Text = "Gestion du personnel";
             this.btnPersonnel.UseVisualStyleBackColor = true;
+            this.btnPersonnel.Click += new System.EventHandler(this.btnPersonnel_Click);
             // 
             // btnEngins
             // 
-            this.btnEngins.Location = new System.Drawing.Point(11, 84);
+            this.btnEngins.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEngins.Location = new System.Drawing.Point(43, 110);
             this.btnEngins.Name = "btnEngins";
-            this.btnEngins.Size = new System.Drawing.Size(196, 42);
+            this.btnEngins.Size = new System.Drawing.Size(169, 83);
             this.btnEngins.TabIndex = 2;
             this.btnEngins.Text = "Gestion des engins";
             this.btnEngins.UseVisualStyleBackColor = true;
             this.btnEngins.Click += new System.EventHandler(this.btnEngins_Click);
             // 
+            // btnStats
+            // 
+            this.btnStats.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnStats.Location = new System.Drawing.Point(43, 288);
+            this.btnStats.Name = "btnStats";
+            this.btnStats.Size = new System.Drawing.Size(169, 83);
+            this.btnStats.TabIndex = 4;
+            this.btnStats.Text = "Statistiques";
+            this.btnStats.UseVisualStyleBackColor = true;
+            this.btnStats.Click += new System.EventHandler(this.btnStats_Click);
+            // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Location = new System.Drawing.Point(11, 446);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(196, 60);
+            this.btnQuitter.TabIndex = 5;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
             // btnTDB
             // 
-            this.btnTDB.Location = new System.Drawing.Point(11, 36);
+            this.btnTDB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTDB.Location = new System.Drawing.Point(43, 21);
             this.btnTDB.Name = "btnTDB";
-            this.btnTDB.Size = new System.Drawing.Size(196, 42);
+            this.btnTDB.Size = new System.Drawing.Size(169, 83);
             this.btnTDB.TabIndex = 0;
             this.btnTDB.Text = "Tableau de bord";
             this.btnTDB.UseVisualStyleBackColor = true;
-            // 
-            // btnMission
-            // 
-            this.btnMission.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMission.BackgroundImage")));
-            this.btnMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMission.Location = new System.Drawing.Point(35, 545);
-            this.btnMission.Name = "btnMission";
-            this.btnMission.Size = new System.Drawing.Size(218, 182);
-            this.btnMission.TabIndex = 1;
-            this.btnMission.UseVisualStyleBackColor = true;
-            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
+            this.btnTDB.Click += new System.EventHandler(this.btnTDB_Click);
             // 
             // panel1
             // 
@@ -121,6 +144,23 @@
             this.panel1.Size = new System.Drawing.Size(1000, 700);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnMission
+            // 
+            this.btnMission.BackColor = System.Drawing.Color.FloralWhite;
+            this.btnMission.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMission.BackgroundImage")));
+            this.btnMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMission.Location = new System.Drawing.Point(35, 545);
+            this.btnMission.Name = "btnMission";
+            this.btnMission.Size = new System.Drawing.Size(218, 182);
+            this.btnMission.TabIndex = 1;
+            this.btnMission.UseVisualStyleBackColor = false;
+            this.btnMission.Click += new System.EventHandler(this.btnMission_Click);
+            // 
+            // timeIndicator
+            // 
+            this.timeIndicator.Interval = 15;
+            this.timeIndicator.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmSoldatFeu
             // 
@@ -136,6 +176,8 @@
             this.Text = "FireBase HQ";
             this.Load += new System.EventHandler(this.frmSoldatFeu_Load);
             this.grpbtnVolet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picIndicator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,6 +192,9 @@
         private System.Windows.Forms.Button btnTDB;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.PictureBox picIndicator;
+        private System.Windows.Forms.Timer timeIndicator;
     }
 }
 

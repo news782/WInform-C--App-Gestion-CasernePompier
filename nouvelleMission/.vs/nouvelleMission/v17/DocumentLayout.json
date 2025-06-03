@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|c:\\users\\julot\\desktop\\sae a21-d21\\nouvellemission\\nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|solutionrelative:nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|c:\\users\\julot\\desktop\\sae a21-d21\\nouvellemission\\nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|solutionrelative:nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|solutionrelative:nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66378119-D7D9-4723-9F30-B6AA1F40B268}|nouvelleMission\\nouvelleMission.csproj|solutionrelative:nouvellemission\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,27 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserControl1.cs",
               "DocumentMoniker": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvelleMission\\UserControl1.cs",
               "RelativeDocumentMoniker": "nouvelleMission\\UserControl1.cs",
-              "ToolTip": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvelleMission\\UserControl1.cs",
-              "RelativeToolTip": "nouvelleMission\\UserControl1.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ToolTip": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvelleMission\\UserControl1.cs*",
+              "RelativeToolTip": "nouvelleMission\\UserControl1.cs*",
+              "ViewState": "AQIAABUAAAAAAAAAAIA1wCcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T14:15:52.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserControl1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvelleMission\\UserControl1.cs",
               "RelativeDocumentMoniker": "nouvelleMission\\UserControl1.cs",
-              "ToolTip": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvelleMission\\UserControl1.cs [Design]",
-              "RelativeToolTip": "nouvelleMission\\UserControl1.cs [Design]",
+              "ToolTip": "C:\\Users\\julot\\Desktop\\SAE A21-D21\\nouvelleMission\\nouvelleMission\\UserControl1.cs [Design]*",
+              "RelativeToolTip": "nouvelleMission\\UserControl1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:59:47.888Z"
+              "WhenOpened": "2025-05-12T13:59:47.888Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

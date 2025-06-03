@@ -64,8 +64,6 @@ namespace Statistiques
             rdbNbIntervention.Text = "Nombre d'interventions par\n type de sinistre";
             rdbPompierHabil.Text = "Liste des pompiers par\n habilitation";
 
-            pbStat.Image = Properties.Resources.stats_removebg_preview;
-
         }
 
         private void rdbEnginUtil_CheckedChanged(object sender, EventArgs e)
@@ -235,6 +233,11 @@ namespace Statistiques
             rdbNbIntervention.Checked = false;
             rdbHabilitations.Checked = false;
             rdbPompierHabil.Checked = false;
+        }
+
+        private void pbStat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

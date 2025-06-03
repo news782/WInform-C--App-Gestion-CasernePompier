@@ -59,5 +59,15 @@ namespace nouvelleMission.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ClocheMission {
+            get {
+                object obj = ResourceManager.GetObject("ClocheMission", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

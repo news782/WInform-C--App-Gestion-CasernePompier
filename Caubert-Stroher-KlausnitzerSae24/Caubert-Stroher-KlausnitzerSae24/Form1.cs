@@ -13,11 +13,18 @@ using nouvelleMission;
 using E = Engin;
 using Statistiques;
 using m = UCmobilisations;
+using System.Diagnostics;
 
 namespace Caubert_Stroher_KlausnitzerSae24
 {
     public partial class frmSoldatFeu : Form
     {
+        private int startTop;
+        private int endTop;
+        private double animationTime; // temps écoulé
+        private double animationDuration = 400; // durée totale en ms
+        private DateTime animationStart;
+
         public frmSoldatFeu()
         {
             InitializeComponent();
@@ -39,7 +46,7 @@ namespace Caubert_Stroher_KlausnitzerSae24
             
 
             panel1.Controls.Add(nv);
-            nv.Dock = DockStyle.Fill;
+            /*nv.Dock = DockStyle.Fill;*/
             nv.Show();
         }
 
@@ -86,6 +93,8 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void btnStats_Click(object sender, EventArgs e)
         {
+            MoveFlameSmooth(btnStats);
+
             panel1.Controls.Clear();
             UCStats stats = new UCStats(Connexion.Connec);
             panel1.Controls.Add(stats);
@@ -95,10 +104,52 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void btnEngins_Click(object sender, EventArgs e)
         {
+            MoveFlameSmooth(btnEngins);
+
             panel1.Controls.Clear();
             E.Engin UCengin = new E.Engin(Connexion.Connec);
             panel1.Controls.Add(UCengin);
             UCengin.Show();
+
+
+        }
+
+
+        private void MoveFlameSmooth(Button targetButton)
+        {
+            startTop = picIndicator.Top;
+            endTop = targetButton.Top + (targetButton.Height - picIndicator.Height) / 2;
+            animationStart = DateTime.Now;
+            timeIndicator.Start();
+        }
+
+
+        private void btnTDB_Click(object sender, EventArgs e)
+        {
+            MoveFlameSmooth(btnTDB);
+        }
+
+        private void btnPersonnel_Click(object sender, EventArgs e)
+        {
+            MoveFlameSmooth(btnPersonnel);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            animationTime = (DateTime.Now - animationStart).TotalMilliseconds;
+
+            double t = animationTime / animationDuration;
+            if (t >= 1)
+            {
+                t = 1;
+                timeIndicator.Stop();
+            }
+
+            // Ease-in-out sinusoidal : (1 - cos(π * t)) / 2
+            double easedT = (1 - Math.Cos(t * Math.PI)) / 2;
+
+            int newTop = (int)(startTop + (endTop - startTop) * easedT);
+            picIndicator.Top = newTop;
         }
     }
 }
