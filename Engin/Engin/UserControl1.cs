@@ -13,34 +13,34 @@ namespace Engin
 {
     public partial class Engin: UserControl
     {
+        private static DataSet dsGlobal = new DataSet();
 
-        
-        
+
         public Engin()
         {
             InitializeComponent();
 
-
+            //Pour tester le UC en local sans les fichiers de connexion et mesDatas
             /*string chcon = @"Data Source = SDIS67.db";
+            cx = new SQLiteConnection(chcon);
+            string[] tables = { "Admin", "Affectation", "Caserne", "Embarquer", "Engin", "Grade", "Habilitation", "Mission", "Mobiliser", "NatureSinistre", "Necessiter", "PartirAvec", "Passer", "Pompier", "TypeEngin", "sqlite_sequence" };
 
-            try
-            {
-                cx = new SQLiteConnection(chcon);
-                cx.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            dsGlobal.Tables.Clear();
 
-            cx.Close();*/
+            foreach (string table in tables)
+            {
+                string qry = "select * from " + table;
+                SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
+                DataTable dt = new DataTable(table);
+                da.Fill(dt);
+                dsGlobal.Tables.Add(dt);
+            }*/
         }
 
-        SQLiteConnection cx;
-        public Engin(SQLiteConnection connec)
+        public Engin(DataSet ds)
         {
             InitializeComponent();
-            cx = connec;
+            dsGlobal = ds;
 
         }
 
@@ -52,12 +52,7 @@ namespace Engin
         {
             string texteStatut = lblStatut.Text;
 
-            string qry = "Select id, nom From Caserne ";
-            SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            cboCaserne.DataSource = dt;
+            cboCaserne.DataSource = dsGlobal.Tables["Caserne"];
             cboCaserne.DisplayMember = "nom";
             cboCaserne.ValueMember = "id";
 
@@ -106,23 +101,29 @@ namespace Engin
 
             int idCaserne = Convert.ToInt32(cboCaserne.SelectedValue);
 
-            string qry2 = "SELECT  (idCaserne || '-' || codeTypeEngin || '-' || numero) AS numero, dateReception, enMission, enPanne FROM Engin WHERE idCaserne = @id";
-            SQLiteDataAdapter da = new SQLiteDataAdapter(qry2, cx);
-            da.SelectCommand.Parameters.AddWithValue("@id", idCaserne);
-            DataTable dt2 = new DataTable();
-            da.Fill(dt2);
+            DataRow[] enginsFiltres = dsGlobal.Tables["Engin"]
+                .Select("idCaserne = " + idCaserne);
+
+            DataTable dtEnginsFiltres = dsGlobal.Tables["Engin"].Clone();
+            foreach (DataRow row in enginsFiltres)
+                dtEnginsFiltres.ImportRow(row);
+
+            dtEnginsFiltres.Columns.Add("numeroid", typeof(string));
+            foreach (DataRow row in dtEnginsFiltres.Rows)
+            {
+                row["numeroid"] = row["idCaserne"] + "-" + row["codeTypeEngin"] + "-" + row["numero"];
+            }
+
+            bs.DataSource = dtEnginsFiltres;
 
             lblStatut.Text = "Statut de l'engin : Disponible";
 
-            bs.DataSource = dt2;
-
-            // Rafraîchir les champs
             lblNum2.DataBindings.Clear();
             lblDate2.DataBindings.Clear();
             chkMission.DataBindings.Clear();
             chkPanne.DataBindings.Clear();
 
-            lblNum2.DataBindings.Add("Text", bs, "numero");
+            lblNum2.DataBindings.Add("Text", bs, "numeroid");
             lblDate2.DataBindings.Add("Text", bs, "dateReception");
             chkMission.DataBindings.Add("Checked", bs, "enMission");
             chkPanne.DataBindings.Add("Checked", bs, "enPanne");

@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\a21-caserne\\Engin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E03A6E2-7BF5-4C42-B361-0A138F2791C5}|Engin\\Engin.csproj|D:\\a21-caserne\\Engin\\engin\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8E03A6E2-7BF5-4C42-B361-0A138F2791C5}|Engin\\Engin.csproj|d:\\a21-caserne\\engin\\engin\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E03A6E2-7BF5-4C42-B361-0A138F2791C5}|Engin\\Engin.csproj|solutionrelative:engin\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E03A6E2-7BF5-4C42-B361-0A138F2791C5}|Engin\\Engin.csproj|d:\\a21-caserne\\engin\\engin\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8E03A6E2-7BF5-4C42-B361-0A138F2791C5}|Engin\\Engin.csproj|D:\\a21-caserne\\Engin\\engin\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8E03A6E2-7BF5-4C42-B361-0A138F2791C5}|Engin\\Engin.csproj|solutionrelative:engin\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -52,9 +52,9 @@
               "Title": "UserControl1.cs",
               "DocumentMoniker": "D:\\a21-caserne\\Engin\\Engin\\UserControl1.cs",
               "RelativeDocumentMoniker": "Engin\\UserControl1.cs",
-              "ToolTip": "D:\\a21-caserne\\Engin\\Engin\\UserControl1.cs*",
-              "RelativeToolTip": "Engin\\UserControl1.cs*",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAwwHIAAAA+AAAAAAAAAA==",
+              "ToolTip": "D:\\a21-caserne\\Engin\\Engin\\UserControl1.cs",
+              "RelativeToolTip": "Engin\\UserControl1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T14:08:49.687Z",
               "EditorCaption": ""
@@ -68,8 +68,7 @@
               "ToolTip": "D:\\a21-caserne\\Engin\\Engin\\UserControl1.cs [Design]*",
               "RelativeToolTip": "Engin\\UserControl1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:51:10.077Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-12T13:51:10.077Z"
             }
           ]
         }
