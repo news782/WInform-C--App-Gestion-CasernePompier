@@ -107,7 +107,7 @@ namespace Caubert_Stroher_KlausnitzerSae24
             MoveFlameSmooth(btnEngins);
 
             panel1.Controls.Clear();
-            E.Engin UCengin = new E.Engin(Connexion.Connec);
+            E.Engin UCengin = new E.Engin(MesDatas.DsGlobal);
             panel1.Controls.Add(UCengin);
             UCengin.Show();
 
