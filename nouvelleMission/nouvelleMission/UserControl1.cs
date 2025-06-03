@@ -20,16 +20,9 @@ namespace nouvelleMission
         public event EventHandler MissionAjouter;
         public DataTable dtPompier { get; private set; } = new DataTable();
         public DataTable dtEngins { get; private set; } = new DataTable();
+        public bool enginsDispo { get; private set; }
 
-        public UCnouvelleMission()// A SUPPIMER
-        {
-            InitializeComponent();
-            //  /!\ A SUPPRIMER ABSOLUEMENT /!\
-            initDs();
-            dtEngins = dsGlobal.Tables["Engin"].Clone();
-            dtPompier = dsGlobal.Tables["Pompier"].Clone();
 
-        }
 
         public UCnouvelleMission(DataSet ds)
         {
@@ -38,6 +31,7 @@ namespace nouvelleMission
 
             dtEngins = dsGlobal.Tables["Engin"].Clone();
             dtPompier = dsGlobal.Tables["Pompier"].Clone();
+            enginsDispo = true;
         }
 
 
@@ -112,34 +106,9 @@ namespace nouvelleMission
 
         private void btnConstituer_Click(object sender, EventArgs e)
         {
-            /*MessageBox.Show("Id de la caserne selectionne : " + cboCaserne.SelectedValue.ToString());
-            MessageBox.Show("Id de la nutureSinistre selectionne : " + cboNature.SelectedValue.ToString());*/
-
-
-            //Remplissage d'une DataTable avec les engins à affecter
-
-            //ajout d'une mission en mode déconnecter
-
-
             int id = dsGlobal.Tables["Mission"].Rows.Count + 1;
 
-            DataRow drMission = dsGlobal.Tables["Mission"].NewRow();
-
-            drMission["id"] = id;
-            drMission["dateHeureDepart"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-            /*dr["dateHeureRetour"] = null;*/
-            drMission["motifAppel"] = txtMotif.Text;
-            drMission["adresse"] = txtRue.Text;
-            drMission["cp"] = txtCodePostal.Text;
-            drMission["ville"] = txtVille.Text;
-            drMission["terminee"] = 0;
-            drMission["compteRendu"] = null;
-            drMission["idNatureSinistre"] = cboNature.SelectedValue;
-            drMission["idCaserne"] = cboCaserne.SelectedValue;
-
-            dsGlobal.Tables["Mission"].Rows.Add(drMission);
-
-
+            
 
             //Récuperation des engins nécessaires
 
@@ -150,9 +119,9 @@ namespace nouvelleMission
 
             int idSinistre = Convert.ToInt32(cboNature.SelectedValue);
 
-            DataRow[] besoins = dsGlobal.Tables["Necessiter"].Select($"idNatureSinistre = '{idSinistre}'");
+            DataRow[] besoinsEngins = dsGlobal.Tables["Necessiter"].Select($"idNatureSinistre = '{idSinistre}'");
 
-            foreach (DataRow besoin in besoins)
+            foreach (DataRow besoin in besoinsEngins)
             {
                 string codeTypeEngin = besoin["codeTypeEngin"].ToString();
                 int nombre = Convert.ToInt32(besoin["nombre"]);
@@ -160,17 +129,91 @@ namespace nouvelleMission
                 string filtre = $"enPanne = 0 AND enMission = 0 AND idCaserne = {idCaserne} AND codeTypeEngin = '{codeTypeEngin}'";
                 DataRow[] enginsDisponibles = dsGlobal.Tables["Engin"].Select(filtre);
 
+                if(enginsDisponibles.Length < nombre)
+                {
+                    enginsDispo = false;
+                    break;
+                }
+
                 int max = Math.Min(nombre, enginsDisponibles.Length);
                 for (int i = 0; i < max; i++)
                 {
+                    enginsDisponibles[i]["enMission"] = 1; //marque l'engin en mission
+
                     dtEngins.ImportRow(enginsDisponibles[i]);
                 }
             }
             
             //TO-DO, lister les pompier a envoyer en mission
+            dtPompier = dsGlobal.Tables["Pompier"].Clone();
 
 
-            MissionAjouter?.Invoke(this, EventArgs.Empty);
+            foreach (DataRow engin in dtEngins.Rows)
+            {
+                string codeTypeEngin = engin["codeTypeEngin"].ToString();
+
+                foreach (DataRow besoin in dsGlobal.Tables["Embarquer"].Select($"codeTypeEngin = '{codeTypeEngin}'"))
+                {
+                    int idHabilitation = Convert.ToInt32(besoin["idHabilitation"]);
+                    int nombre = Convert.ToInt32(besoin["nombre"]);
+
+                    // Tous les pompiers affectés à la caserne
+                    foreach (DataRow aff in dsGlobal.Tables["Affectation"].Select($"idCaserne = {idCaserne}"))
+                    {
+                        string matricule = aff["matriculePompier"].ToString();
+
+                        // Vérifie si ce pompier a cette habilitation (via Passer)
+                        bool habilite = dsGlobal.Tables["Passer"].Select($"matriculePompier = '{matricule}' AND idHabilitation = {idHabilitation}").Length > 0;
+
+                        if (!habilite) continue;
+
+                        // Vérifie si ce pompier est disponible
+                        DataRow[] pompiers = dsGlobal.Tables["Pompier"].Select($"matricule = '{matricule}' AND enMission = 0 AND enConge = 0");
+
+                        if (pompiers.Length > 0 && nombre > 0)
+                        {
+                            DataRow pompier = pompiers[0];
+
+                            dtPompier.ImportRow(pompier);
+                            pompier["enMission"] = 1; // marquer comme mobilisé
+                            nombre--;
+                        }
+
+                        if (nombre <= 0)
+                            break;
+                    }
+                }
+            }
+
+
+            if (!enginsDispo)
+            {
+                MessageBox.Show("Pas assez d'engins dispo ! ");
+            }
+
+            else
+            {
+                //Ajout de la mission dans le dsGlobal de la classe mesDatas.cs
+                DataRow drMission = dsGlobal.Tables["Mission"].NewRow();
+
+                drMission["id"] = id;
+                drMission["dateHeureDepart"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                /*dr["dateHeureRetour"] = null;*/
+                drMission["motifAppel"] = txtMotif.Text;
+                drMission["adresse"] = txtRue.Text;
+                drMission["cp"] = txtCodePostal.Text;
+                drMission["ville"] = txtVille.Text;
+                drMission["terminee"] = 0;
+                drMission["compteRendu"] = null;
+                drMission["idNatureSinistre"] = cboNature.SelectedValue;
+                drMission["idCaserne"] = cboCaserne.SelectedValue;
+
+                dsGlobal.Tables["Mission"].Rows.Add(drMission);
+
+                MissionAjouter?.Invoke(this, EventArgs.Empty);
+            }
+
+            
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -183,25 +226,6 @@ namespace nouvelleMission
             this.Parent.Controls.Remove(this);
         }
 
-        public static void initDs() //initialisation du DataSet dsGlobal (a utiliser lors du FormLoad du Form de base)
-        {
-            string[] tables = { "Admin", "Affectation", "Caserne", "Embarquer", "Engin", "Grade", "Habilitation", "Mission", "Mobiliser", "NatureSinistre", "Necessiter", "PartirAvec", "Passer", "Pompier", "TypeEngin", "sqlite_sequence" };
-
-            dsGlobal = new DataSet();
-            SQLiteConnection connec = new SQLiteConnection(@"Data Source = SDIS67.db");
-
-            connec.Open();
-
-            foreach (string table in tables)
-            {
-                string qry = "select * from " + table;
-                SQLiteDataAdapter da = new SQLiteDataAdapter(qry, connec);
-                DataTable dt = new DataTable(table);
-                da.Fill(dt);
-                dsGlobal.Tables.Add(dt);
-            }
-
-            connec.Close();
-        }
+        
     }
 }

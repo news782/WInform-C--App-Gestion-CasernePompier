@@ -62,14 +62,14 @@
             this.pnlEngins.Controls.Add(this.tblEngins);
             this.pnlEngins.Location = new System.Drawing.Point(23, 75);
             this.pnlEngins.Name = "pnlEngins";
-            this.pnlEngins.Size = new System.Drawing.Size(260, 347);
+            this.pnlEngins.Size = new System.Drawing.Size(307, 347);
             this.pnlEngins.TabIndex = 1;
             // 
             // lblEngins
             // 
             this.lblEngins.AutoSize = true;
             this.lblEngins.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEngins.Location = new System.Drawing.Point(52, 0);
+            this.lblEngins.Location = new System.Drawing.Point(76, 0);
             this.lblEngins.Name = "lblEngins";
             this.lblEngins.Size = new System.Drawing.Size(158, 25);
             this.lblEngins.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.tblEngins.Name = "tblEngins";
             this.tblEngins.RowCount = 1;
             this.tblEngins.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblEngins.Size = new System.Drawing.Size(237, 300);
+            this.tblEngins.Size = new System.Drawing.Size(283, 300);
             this.tblEngins.TabIndex = 0;
             // 
             // pnlPompier
@@ -96,16 +96,16 @@
             this.pnlPompier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPompier.Controls.Add(this.lblPompier);
             this.pnlPompier.Controls.Add(this.tblPompier);
-            this.pnlPompier.Location = new System.Drawing.Point(318, 75);
+            this.pnlPompier.Location = new System.Drawing.Point(356, 76);
             this.pnlPompier.Name = "pnlPompier";
-            this.pnlPompier.Size = new System.Drawing.Size(260, 347);
+            this.pnlPompier.Size = new System.Drawing.Size(307, 347);
             this.pnlPompier.TabIndex = 2;
             // 
             // lblPompier
             // 
             this.lblPompier.AutoSize = true;
             this.lblPompier.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPompier.Location = new System.Drawing.Point(37, 0);
+            this.lblPompier.Location = new System.Drawing.Point(64, -1);
             this.lblPompier.Name = "lblPompier";
             this.lblPompier.Size = new System.Drawing.Size(182, 25);
             this.lblPompier.TabIndex = 2;
@@ -116,14 +116,14 @@
             this.tblPompier.AutoScroll = true;
             this.tblPompier.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tblPompier.ColumnCount = 3;
-            this.tblPompier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblPompier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblPompier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblPompier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tblPompier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tblPompier.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblPompier.Location = new System.Drawing.Point(11, 33);
             this.tblPompier.Name = "tblPompier";
             this.tblPompier.RowCount = 1;
             this.tblPompier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPompier.Size = new System.Drawing.Size(237, 300);
+            this.tblPompier.Size = new System.Drawing.Size(281, 300);
             this.tblPompier.TabIndex = 1;
             // 
             // btnFermer
@@ -132,7 +132,7 @@
             this.btnFermer.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnFermer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFermer.ForeColor = System.Drawing.Color.Transparent;
-            this.btnFermer.Location = new System.Drawing.Point(445, 440);
+            this.btnFermer.Location = new System.Drawing.Point(553, 447);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(133, 35);
             this.btnFermer.TabIndex = 3;
@@ -150,7 +150,7 @@
             this.Controls.Add(this.pnlEngins);
             this.Controls.Add(this.lblTitre);
             this.Name = "UCmobilisations";
-            this.Size = new System.Drawing.Size(608, 485);
+            this.Size = new System.Drawing.Size(689, 485);
             this.Load += new System.EventHandler(this.UCmobilisations_Load);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.UCmobilisations_MouseUp);
             this.pnlEngins.ResumeLayout(false);

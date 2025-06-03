@@ -26,42 +26,7 @@ namespace UCmobilisations
             dtEngins = datatableEngins;
             dtPompiers = datatablePompier;
         }
-
-        public UCmobilisations() //ce Constructeurs sera a supprimer ultérieurement 
-        {
-            InitializeComponent();
-            initDs();
-
-
-
-
-        }
-
-        public static void initDs() //initialisation du DataSet dsGlobal (a utiliser lors du FormLoad du Form de base)
-        {
-            string[] tables = { "Admin", "Affectation", "Caserne", "Embarquer", "Engin", "Grade", "Habilitation", "Mission", "Mobiliser", "NatureSinistre", "Necessiter", "PartirAvec", "Passer", "Pompier", "TypeEngin", "sqlite_sequence" };
-
-            dsGlobal = new DataSet();
-            SQLiteConnection connec = new SQLiteConnection(@"Data Source = SDIS67.db");
-
-            connec.Open();
-
-            foreach (string table in tables)
-            {
-                string qry = "select * from " + table;
-                SQLiteDataAdapter da = new SQLiteDataAdapter(qry, connec);
-                DataTable dt = new DataTable(table);
-                da.Fill(dt);
-                dsGlobal.Tables.Add(dt);
-            }
-
-            connec.Close();
-
-
-
-        }
-
-        //A SUPPRIMER
+        
 
         private void UCmobilisations_Load(object sender, EventArgs e)
         {
@@ -80,6 +45,7 @@ namespace UCmobilisations
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Width = 40;
                 pic.Height = 40;
+                pic.Margin = new Padding(11);
                 tblEngins.Controls.Add(pic, 0, i);
 
                 Label lbl = new Label();
@@ -104,15 +70,27 @@ namespace UCmobilisations
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Width = 40;
                 pic.Height = 40;
+                pic.Margin = new Padding(11);
                 tblPompier.Controls.Add(pic, 0, i);
 
-                Label lbl = new Label();
-                lbl.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                lbl.AutoSize = true;
-                lbl.Text = dtPompiers.Rows[i]["matricule"].ToString();
-                lbl.Margin = new Padding(11);
-                tblPompier.Controls.Add(lbl, 1, i);
+                Label lblMatricule = new Label();
+                lblMatricule.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                lblMatricule.AutoSize = true;
+                lblMatricule.Text = dtPompiers.Rows[i]["matricule"].ToString();
+                lblMatricule.Margin = new Padding(11);
+                tblPompier.Controls.Add(lblMatricule, 1, i);
+
+
+                Label lblNom = new Label();
+                lblNom.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                lblNom.AutoSize = true;
+                lblNom.Margin = new Padding(11);
+                lblNom.Text = dtPompiers.Rows[i]["nom"].ToString();
+                tblPompier.Controls.Add(lblNom, 2, i);
             }
+
+            tblPompier.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            
   
 
         }
