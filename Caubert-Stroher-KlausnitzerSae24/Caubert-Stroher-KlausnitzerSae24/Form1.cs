@@ -47,7 +47,7 @@ namespace Caubert_Stroher_KlausnitzerSae24
         {
             var uc = sender as UCnouvelleMission;
             //donne accès au champs dtEngins et dtPompier du UCnouvelleMission
-            m.UCmobilisations mobil = new m.UCmobilisations(uc.dtEngins, uc.dtPompier);
+            m.UCmobilisations mobil = new m.UCmobilisations(uc.dtEngins, MesDatas.DsGlobal.Tables["Pompier"]); //supprimer le dsGlobal remplacer par uc.dtPompier
             panel1.Controls.Clear();
             panel1.Controls.Add(mobil);
             mobil.Show();
