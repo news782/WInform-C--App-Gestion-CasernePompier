@@ -10,6 +10,7 @@ obj/
 *.log
 *.config
 *.xml
+*.vsidx
 
 # Dossiers spécifiques aux builds
 *.csproj.FileListAbsolute.txt
