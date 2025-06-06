@@ -14,6 +14,7 @@ using E = Engin;
 using Statistiques;
 using m = UCmobilisations;
 using System.Diagnostics;
+using UCGestionPompier;
 
 namespace Caubert_Stroher_KlausnitzerSae24
 {
@@ -39,13 +40,15 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void btnMission_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
+            MoveFlameSmooth(btnTDB);
+
+            pnlUC.Controls.Clear();
             UCnouvelleMission nv = new UCnouvelleMission(MesDatas.DsGlobal);
 
             nv.MissionAjouter += Uc_missionAjouter;
             
 
-            panel1.Controls.Add(nv);
+            pnlUC.Controls.Add(nv);
             /*nv.Dock = DockStyle.Fill;*/
             nv.Show();
         }
@@ -57,8 +60,8 @@ namespace Caubert_Stroher_KlausnitzerSae24
             if(uc.enginsDispo)
             {
                 m.UCmobilisations mobil = new m.UCmobilisations(uc.dtEngins, uc.dtPompier);
-                panel1.Controls.Clear();
-                panel1.Controls.Add(mobil);
+                pnlUC.Controls.Clear();
+                pnlUC.Controls.Add(mobil);
                 mobil.Show();
             }
             
@@ -95,9 +98,9 @@ namespace Caubert_Stroher_KlausnitzerSae24
         {
             MoveFlameSmooth(btnStats);
 
-            panel1.Controls.Clear();
+            pnlUC.Controls.Clear();
             UCStats stats = new UCStats(Connexion.Connec);
-            panel1.Controls.Add(stats);
+            pnlUC.Controls.Add(stats);
             stats.Dock = DockStyle.Fill;
             stats.Show();
         }
@@ -106,9 +109,9 @@ namespace Caubert_Stroher_KlausnitzerSae24
         {
             MoveFlameSmooth(btnEngins);
 
-            panel1.Controls.Clear();
+            pnlUC.Controls.Clear();
             E.Engin UCengin = new E.Engin(MesDatas.DsGlobal);
-            panel1.Controls.Add(UCengin);
+            pnlUC.Controls.Add(UCengin);
             UCengin.Show();
 
 
@@ -132,6 +135,13 @@ namespace Caubert_Stroher_KlausnitzerSae24
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
             MoveFlameSmooth(btnPersonnel);
+
+            pnlUC.Controls.Clear();
+
+             UCgestionPompier pomp = new UCgestionPompier(MesDatas.DsGlobal, Connexion.Connec);
+
+            pnlUC.Controls.Add(pomp);
+            pomp.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

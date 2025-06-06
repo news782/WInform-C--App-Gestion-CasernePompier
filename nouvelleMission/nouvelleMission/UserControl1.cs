@@ -226,6 +226,9 @@ namespace nouvelleMission
             this.Parent.Controls.Remove(this);
         }
 
-        
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,7 +38,7 @@
             this.btnStats = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnTDB = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlUC = new System.Windows.Forms.Panel();
             this.btnMission = new System.Windows.Forms.Button();
             this.timeIndicator = new System.Windows.Forms.Timer(this.components);
             this.grpbtnVolet.SuspendLayout();
@@ -56,7 +56,7 @@
             this.grpbtnVolet.Controls.Add(this.btnStats);
             this.grpbtnVolet.Controls.Add(this.btnQuitter);
             this.grpbtnVolet.Controls.Add(this.btnTDB);
-            this.grpbtnVolet.Location = new System.Drawing.Point(35, 27);
+            this.grpbtnVolet.Location = new System.Drawing.Point(1, 1);
             this.grpbtnVolet.Name = "grpbtnVolet";
             this.grpbtnVolet.Size = new System.Drawing.Size(218, 512);
             this.grpbtnVolet.TabIndex = 0;
@@ -137,20 +137,20 @@
             this.btnTDB.UseVisualStyleBackColor = true;
             this.btnTDB.Click += new System.EventHandler(this.btnTDB_Click);
             // 
-            // panel1
+            // pnlUC
             // 
-            this.panel1.Location = new System.Drawing.Point(259, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 700);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnlUC.Location = new System.Drawing.Point(225, 1);
+            this.pnlUC.Name = "pnlUC";
+            this.pnlUC.Size = new System.Drawing.Size(1000, 700);
+            this.pnlUC.TabIndex = 3;
+            this.pnlUC.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnMission
             // 
             this.btnMission.BackColor = System.Drawing.Color.FloralWhite;
             this.btnMission.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMission.BackgroundImage")));
             this.btnMission.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMission.Location = new System.Drawing.Point(35, 545);
+            this.btnMission.Location = new System.Drawing.Point(1, 519);
             this.btnMission.Name = "btnMission";
             this.btnMission.Size = new System.Drawing.Size(218, 182);
             this.btnMission.TabIndex = 1;
@@ -166,13 +166,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 744);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1228, 705);
+            this.Controls.Add(this.pnlUC);
             this.Controls.Add(this.grpbtnVolet);
             this.Controls.Add(this.btnMission);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSoldatFeu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FireBase HQ";
             this.Load += new System.EventHandler(this.frmSoldatFeu_Load);
             this.grpbtnVolet.ResumeLayout(false);
@@ -191,7 +192,7 @@
         private System.Windows.Forms.Button btnMission;
         private System.Windows.Forms.Button btnTDB;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlUC;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.PictureBox picIndicator;
         private System.Windows.Forms.Timer timeIndicator;

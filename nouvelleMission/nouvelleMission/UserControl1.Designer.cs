@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCnouvelleMission));
             this.lblMission = new System.Windows.Forms.Label();
             this.lblDeclenchéLe = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
@@ -48,7 +49,11 @@
             this.picCloche = new System.Windows.Forms.PictureBox();
             this.lblDecision = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCloche)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMission
@@ -89,7 +94,7 @@
             // 
             this.txtVille.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVille.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtVille.Location = new System.Drawing.Point(538, 243);
+            this.txtVille.Location = new System.Drawing.Point(728, 156);
             this.txtVille.Name = "txtVille";
             this.txtVille.Size = new System.Drawing.Size(200, 33);
             this.txtVille.TabIndex = 10;
@@ -99,7 +104,7 @@
             // 
             this.txtCodePostal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodePostal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtCodePostal.Location = new System.Drawing.Point(92, 243);
+            this.txtCodePostal.Location = new System.Drawing.Point(282, 156);
             this.txtCodePostal.Name = "txtCodePostal";
             this.txtCodePostal.Size = new System.Drawing.Size(321, 33);
             this.txtCodePostal.TabIndex = 9;
@@ -108,7 +113,7 @@
             // 
             this.txtRue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtRue.Location = new System.Drawing.Point(92, 197);
+            this.txtRue.Location = new System.Drawing.Point(282, 110);
             this.txtRue.Name = "txtRue";
             this.txtRue.Size = new System.Drawing.Size(646, 33);
             this.txtRue.TabIndex = 8;
@@ -118,7 +123,7 @@
             this.lblVille.AutoSize = true;
             this.lblVille.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblVille.ForeColor = System.Drawing.Color.Black;
-            this.lblVille.Location = new System.Drawing.Point(37, 245);
+            this.lblVille.Location = new System.Drawing.Point(227, 158);
             this.lblVille.Name = "lblVille";
             this.lblVille.Size = new System.Drawing.Size(49, 25);
             this.lblVille.TabIndex = 6;
@@ -130,7 +135,7 @@
             this.lblCodePostal.AutoSize = true;
             this.lblCodePostal.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblCodePostal.ForeColor = System.Drawing.Color.Black;
-            this.lblCodePostal.Location = new System.Drawing.Point(419, 245);
+            this.lblCodePostal.Location = new System.Drawing.Point(609, 158);
             this.lblCodePostal.Name = "lblCodePostal";
             this.lblCodePostal.Size = new System.Drawing.Size(113, 25);
             this.lblCodePostal.TabIndex = 7;
@@ -141,7 +146,7 @@
             this.lblRue.AutoSize = true;
             this.lblRue.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblRue.ForeColor = System.Drawing.Color.Black;
-            this.lblRue.Location = new System.Drawing.Point(41, 199);
+            this.lblRue.Location = new System.Drawing.Point(231, 112);
             this.lblRue.Name = "lblRue";
             this.lblRue.Size = new System.Drawing.Size(45, 25);
             this.lblRue.TabIndex = 7;
@@ -151,7 +156,7 @@
             // 
             this.txtMotif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMotif.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtMotif.Location = new System.Drawing.Point(92, 155);
+            this.txtMotif.Location = new System.Drawing.Point(282, 68);
             this.txtMotif.Name = "txtMotif";
             this.txtMotif.Size = new System.Drawing.Size(646, 33);
             this.txtMotif.TabIndex = 6;
@@ -161,7 +166,7 @@
             this.lblMotif.AutoSize = true;
             this.lblMotif.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblMotif.ForeColor = System.Drawing.Color.Black;
-            this.lblMotif.Location = new System.Drawing.Point(26, 157);
+            this.lblMotif.Location = new System.Drawing.Point(216, 70);
             this.lblMotif.Name = "lblMotif";
             this.lblMotif.Size = new System.Drawing.Size(60, 25);
             this.lblMotif.TabIndex = 5;
@@ -258,11 +263,41 @@
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(26, 106);
+            this.lblInfo.Location = new System.Drawing.Point(216, 19);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(193, 25);
             this.lblInfo.TabIndex = 23;
             this.lblInfo.Text = "Informations usager";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtVille);
+            this.groupBox1.Controls.Add(this.lblInfo);
+            this.groupBox1.Controls.Add(this.lblMotif);
+            this.groupBox1.Controls.Add(this.txtMotif);
+            this.groupBox1.Controls.Add(this.lblRue);
+            this.groupBox1.Controls.Add(this.lblCodePostal);
+            this.groupBox1.Controls.Add(this.lblVille);
+            this.groupBox1.Controls.Add(this.txtRue);
+            this.groupBox1.Controls.Add(this.txtCodePostal);
+            this.groupBox1.Location = new System.Drawing.Point(-190, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1456, 218);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.BackgroundImage")));
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbLogo.Location = new System.Drawing.Point(508, -1);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(255, 86);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 25;
+            this.pbLogo.TabStop = false;
             // 
             // UCnouvelleMission
             // 
@@ -270,23 +305,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.pbLogo);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblDecision);
             this.Controls.Add(this.picCloche);
             this.Controls.Add(this.lblGestion);
             this.Controls.Add(this.cboCaserne);
-            this.Controls.Add(this.txtVille);
             this.Controls.Add(this.lblMission);
-            this.Controls.Add(this.txtCodePostal);
             this.Controls.Add(this.cboNature);
-            this.Controls.Add(this.txtRue);
-            this.Controls.Add(this.lblVille);
-            this.Controls.Add(this.lblCodePostal);
             this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.lblRue);
             this.Controls.Add(this.lblNature);
-            this.Controls.Add(this.txtMotif);
-            this.Controls.Add(this.lblMotif);
             this.Controls.Add(this.btnConstituer);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblDeclenchéLe);
@@ -295,6 +323,9 @@
             this.Size = new System.Drawing.Size(762, 483);
             this.Load += new System.EventHandler(this.UCnouvelleMission_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picCloche)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +353,7 @@
         private System.Windows.Forms.PictureBox picCloche;
         private System.Windows.Forms.Label lblDecision;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }
