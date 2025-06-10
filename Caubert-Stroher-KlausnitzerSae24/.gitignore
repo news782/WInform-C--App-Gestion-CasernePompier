@@ -23,3 +23,5 @@ obj/
 
 # Ne pas ignorer la base de données
 !bin/Debug/SDIS67.db
+!bin/Debug/Images
+!bin/Debug/ImagesGrades
