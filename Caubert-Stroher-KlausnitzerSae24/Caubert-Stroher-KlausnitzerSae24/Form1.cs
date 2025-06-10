@@ -15,6 +15,7 @@ using Statistiques;
 using m = UCmobilisations;
 using System.Diagnostics;
 using UCGestionPompier;
+using UCTDB;
 
 namespace Caubert_Stroher_KlausnitzerSae24
 {
@@ -34,7 +35,9 @@ namespace Caubert_Stroher_KlausnitzerSae24
 
         private void frmSoldatFeu_Load(object sender, EventArgs e)
         {
-            
+            TableauDeBord tdb = new TableauDeBord(MesDatas.DsGlobal);
+            pnlUC.Controls.Add(tdb);
+            tdb.Show();
         }
 
         private void btnMission_Click(object sender, EventArgs e)
@@ -129,6 +132,10 @@ namespace Caubert_Stroher_KlausnitzerSae24
         private void btnTDB_Click(object sender, EventArgs e)
         {
             MoveFlameSmooth(btnTDB);
+            pnlUC.Controls.Clear();
+            TableauDeBord tdb = new TableauDeBord(MesDatas.DsGlobal);
+            pnlUC.Controls.Add(tdb);
+            tdb.Show();
         }
 
         private void btnPersonnel_Click(object sender, EventArgs e)
