@@ -60,6 +60,12 @@ namespace UCGestionPompier
             pnlLog.Visible=false;
             btnLogin.Visible=false;
             btnModif.Visible = true;
+            cboGrade.Visible = true;
+
+
+            cboGrade.DataSource = dsGlobal.Tables["Grade"];
+            cboGrade.ValueMember = "code";
+            cboGrade.DisplayMember = "libelle";
         }
 
         private void btnModif_Click(object sender, EventArgs e)
@@ -189,6 +195,9 @@ namespace UCGestionPompier
             txtTel.Text = "N° tel : " + afficheTel(dtCePompier.Rows[0]["portable"].ToString());
             txtBip.Text = "Bip : " + dtCePompier.Rows[0]["bip"].ToString();
 
+            txtGrade.Text = dtCePompier.Rows[0]["codeGrade"].ToString();
+
+
 
 
 
@@ -273,6 +282,10 @@ namespace UCGestionPompier
             
         }
 
-       
+        private void cboGrade_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            afficheGrade(cboGrade.SelectedValue.ToString());
+            btnConfirmerModif.Visible = true;
+        }
     }
 }

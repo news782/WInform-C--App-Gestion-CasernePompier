@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCgestionPompier));
             this.grpEste = new System.Windows.Forms.GroupBox();
             this.btnModif = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -48,9 +49,15 @@
             this.lblConger = new System.Windows.Forms.Label();
             this.lbAncienneAffectation = new System.Windows.Forms.ListBox();
             this.pnlLog = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnConfirmerModif = new System.Windows.Forms.Button();
+            this.cboGrade = new System.Windows.Forms.ComboBox();
+            this.txtGrade = new System.Windows.Forms.TextBox();
+            this.chklstHabilitations = new System.Windows.Forms.CheckedListBox();
             this.grpEste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGrade)).BeginInit();
             this.grpInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEste
@@ -72,11 +79,11 @@
             this.btnModif.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnModif.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnModif.ForeColor = System.Drawing.Color.White;
-            this.btnModif.Location = new System.Drawing.Point(760, 41);
+            this.btnModif.Location = new System.Drawing.Point(760, 39);
             this.btnModif.Name = "btnModif";
-            this.btnModif.Size = new System.Drawing.Size(195, 31);
+            this.btnModif.Size = new System.Drawing.Size(198, 31);
             this.btnModif.TabIndex = 3;
-            this.btnModif.Text = "Modifications";
+            this.btnModif.Text = "Ajouter pompier";
             this.btnModif.UseVisualStyleBackColor = false;
             this.btnModif.Visible = false;
             this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
@@ -89,7 +96,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(760, 39);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(195, 31);
+            this.btnLogin.Size = new System.Drawing.Size(198, 31);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Connexion Admin";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -222,13 +229,14 @@
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.chklstHabilitations);
             this.grpInfo.Controls.Add(this.lbHabilitions);
             this.grpInfo.Controls.Add(this.lblConger);
             this.grpInfo.Controls.Add(this.lbAncienneAffectation);
             this.grpInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.grpInfo.Location = new System.Drawing.Point(90, 347);
+            this.grpInfo.Location = new System.Drawing.Point(285, 347);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(823, 212);
+            this.grpInfo.Size = new System.Drawing.Size(641, 212);
             this.grpInfo.TabIndex = 11;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Informations carrière";
@@ -239,15 +247,15 @@
             this.lbHabilitions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbHabilitions.FormattingEnabled = true;
             this.lbHabilitions.ItemHeight = 25;
-            this.lbHabilitions.Location = new System.Drawing.Point(72, 113);
+            this.lbHabilitions.Location = new System.Drawing.Point(17, 113);
             this.lbHabilitions.Name = "lbHabilitions";
-            this.lbHabilitions.Size = new System.Drawing.Size(668, 77);
+            this.lbHabilitions.Size = new System.Drawing.Size(601, 77);
             this.lbHabilitions.TabIndex = 2;
             // 
             // lblConger
             // 
             this.lblConger.AutoSize = true;
-            this.lblConger.Location = new System.Drawing.Point(563, 45);
+            this.lblConger.Location = new System.Drawing.Point(438, 45);
             this.lblConger.Name = "lblConger";
             this.lblConger.Size = new System.Drawing.Size(142, 25);
             this.lblConger.TabIndex = 1;
@@ -259,26 +267,83 @@
             this.lbAncienneAffectation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbAncienneAffectation.FormattingEnabled = true;
             this.lbAncienneAffectation.ItemHeight = 25;
-            this.lbAncienneAffectation.Location = new System.Drawing.Point(72, 45);
+            this.lbAncienneAffectation.Location = new System.Drawing.Point(17, 45);
             this.lbAncienneAffectation.Name = "lbAncienneAffectation";
             this.lbAncienneAffectation.Size = new System.Drawing.Size(318, 50);
             this.lbAncienneAffectation.TabIndex = 0;
             // 
             // pnlLog
             // 
-            this.pnlLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlLog.Location = new System.Drawing.Point(302, 190);
+            this.pnlLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLog.Location = new System.Drawing.Point(342, 215);
             this.pnlLog.Name = "pnlLog";
             this.pnlLog.Size = new System.Drawing.Size(375, 227);
             this.pnlLog.TabIndex = 12;
             this.pnlLog.Visible = false;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(717, 103);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(196, 63);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 14;
+            this.picLogo.TabStop = false;
+            // 
+            // btnConfirmerModif
+            // 
+            this.btnConfirmerModif.AutoSize = true;
+            this.btnConfirmerModif.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnConfirmerModif.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirmerModif.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmerModif.Location = new System.Drawing.Point(728, 588);
+            this.btnConfirmerModif.Name = "btnConfirmerModif";
+            this.btnConfirmerModif.Size = new System.Drawing.Size(198, 31);
+            this.btnConfirmerModif.TabIndex = 4;
+            this.btnConfirmerModif.Text = "Confirmer modifications";
+            this.btnConfirmerModif.UseVisualStyleBackColor = false;
+            this.btnConfirmerModif.Visible = false;
+            // 
+            // cboGrade
+            // 
+            this.cboGrade.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cboGrade.FormattingEnabled = true;
+            this.cboGrade.Location = new System.Drawing.Point(90, 366);
+            this.cboGrade.Name = "cboGrade";
+            this.cboGrade.Size = new System.Drawing.Size(146, 33);
+            this.cboGrade.TabIndex = 15;
+            this.cboGrade.Visible = false;
+            this.cboGrade.SelectionChangeCommitted += new System.EventHandler(this.cboGrade_SelectionChangeCommitted);
+            // 
+            // txtGrade
+            // 
+            this.txtGrade.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtGrade.Location = new System.Drawing.Point(90, 327);
+            this.txtGrade.Name = "txtGrade";
+            this.txtGrade.ReadOnly = true;
+            this.txtGrade.Size = new System.Drawing.Size(146, 33);
+            this.txtGrade.TabIndex = 16;
+            this.txtGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // chklstHabilitations
+            // 
+            this.chklstHabilitations.BackColor = System.Drawing.Color.FloralWhite;
+            this.chklstHabilitations.FormattingEnabled = true;
+            this.chklstHabilitations.Location = new System.Drawing.Point(17, 113);
+            this.chklstHabilitations.Name = "chklstHabilitations";
+            this.chklstHabilitations.Size = new System.Drawing.Size(601, 88);
+            this.chklstHabilitations.TabIndex = 3;
             // 
             // UCgestionPompier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.txtGrade);
+            this.Controls.Add(this.cboGrade);
+            this.Controls.Add(this.btnConfirmerModif);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.pnlLog);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.txtBip);
@@ -293,13 +358,14 @@
             this.Controls.Add(this.lblFiche);
             this.Controls.Add(this.grpEste);
             this.Name = "UCgestionPompier";
-            this.Size = new System.Drawing.Size(998, 647);
+            this.Size = new System.Drawing.Size(1000, 649);
             this.Load += new System.EventHandler(this.UCgestionPompier_Load);
             this.grpEste.ResumeLayout(false);
             this.grpEste.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGrade)).EndInit();
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +393,10 @@
         private System.Windows.Forms.ListBox lbHabilitions;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Panel pnlLog;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Button btnConfirmerModif;
+        private System.Windows.Forms.ComboBox cboGrade;
+        private System.Windows.Forms.TextBox txtGrade;
+        private System.Windows.Forms.CheckedListBox chklstHabilitations;
     }
 }
