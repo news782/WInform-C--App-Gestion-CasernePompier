@@ -64,6 +64,9 @@
     <Reference Include="UCmobilisations">
       <HintPath>..\..\UCmobilisations\UCmobilisations\bin\Debug\UCmobilisations.dll</HintPath>
     </Reference>
+    <Reference Include="UCTDB">
+      <HintPath>..\..\UCTDB\UCTDB\bin\Debug\UCTDB.dll</HintPath>
+    </Reference>
     <Reference Include="UC_Tableau_de_bord">
       <HintPath>..\..\Tableau_de_bord_finis\UC_Tableau_de_bord\UC_Tableau_de_bord\bin\Debug\UC_Tableau_de_bord.dll</HintPath>
     </Reference>
