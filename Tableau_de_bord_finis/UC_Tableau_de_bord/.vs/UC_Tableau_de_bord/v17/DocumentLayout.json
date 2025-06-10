@@ -1,37 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\",
+  "WorkspaceRootPath": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|c:\\users\\matte\\desktop\\iut rs\\1ere ann\u00E9e\\a21 - application\\tableau de bord\\uc_tableau_de_bord\\uc_tableau_de_bord\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|d:\\a21-caserne\\tableau_de_bord_finis\\uc_tableau_de_bord\\uc_tableau_de_bord\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\mesdatas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\mesdatas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\connexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\connexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\probleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\uc_tableau_de_bord\\probleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\probleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\uc_tableau_de_bord\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\uc_tableau_de_bord\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2B0D688A-46B9-4286-99D9-9F3778F8FFDB}|UC_Tableau_de_bord\\UC_Tableau_de_bord.csproj|solutionrelative:uc_tableau_de_bord\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,15 +22,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Probleme.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Probleme.cs",
+              "DocumentMoniker": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Probleme.cs",
               "RelativeDocumentMoniker": "UC_Tableau_de_bord\\Probleme.cs",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Probleme.cs",
+              "ToolTip": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Probleme.cs",
               "RelativeToolTip": "UC_Tableau_de_bord\\Probleme.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwCIAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -59,32 +39,26 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Connexion.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Connexion.cs",
-              "RelativeDocumentMoniker": "UC_Tableau_de_bord\\Connexion.cs",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Connexion.cs",
-              "RelativeToolTip": "UC_Tableau_de_bord\\Connexion.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T08:31:41.484Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserControl1.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs",
+              "DocumentMoniker": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs",
               "RelativeDocumentMoniker": "UC_Tableau_de_bord\\UserControl1.cs",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs",
+              "ToolTip": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs",
               "RelativeToolTip": "UC_Tableau_de_bord\\UserControl1.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAUwMYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4BAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T08:51:35.617Z",
               "EditorCaption": ""
@@ -92,62 +66,10 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "app.config",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\app.config",
-              "RelativeDocumentMoniker": "UC_Tableau_de_bord\\app.config",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\app.config",
-              "RelativeToolTip": "UC_Tableau_de_bord\\app.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-06-07T12:15:38.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "UC_Tableau_de_bord\\Properties\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "UC_Tableau_de_bord\\Properties\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:15:10.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "mesDatas.cs",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\mesDatas.cs",
-              "RelativeDocumentMoniker": "UC_Tableau_de_bord\\mesDatas.cs",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\mesDatas.cs",
-              "RelativeToolTip": "UC_Tableau_de_bord\\mesDatas.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAIwIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:56:58.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "packages.config",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\packages.config",
-              "RelativeDocumentMoniker": "UC_Tableau_de_bord\\packages.config",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\packages.config",
-              "RelativeToolTip": "UC_Tableau_de_bord\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-06-07T12:16:10.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "UserControl1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs",
+              "DocumentMoniker": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs",
               "RelativeDocumentMoniker": "UC_Tableau_de_bord\\UserControl1.cs",
-              "ToolTip": "C:\\Users\\matte\\Desktop\\IUT RS\\1ere Ann\u00E9e\\A21 - Application\\Tableau de bord\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs [Design]",
+              "ToolTip": "D:\\a21-caserne\\Tableau_de_bord_finis\\UC_Tableau_de_bord\\UC_Tableau_de_bord\\UserControl1.cs [Design]",
               "RelativeToolTip": "UC_Tableau_de_bord\\UserControl1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T13:21:17.612Z",

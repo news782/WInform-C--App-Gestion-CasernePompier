@@ -11,15 +11,15 @@ using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using System.IO;
-using UC_Tab_de_bord;
-using iText.Layout.Borders; // ⚠️ Ton namespace pour accéder à MesDatas
+using iText.Layout.Borders;
+using System.Data;
 
 namespace UC_Tableau_de_bord
 {
     public partial class UserControl1 : UserControl
     {
         private List<Probleme> toutesLesMissions;
-
+        private static DataSet DsGlobal = new DataSet();
         public UserControl1()
         {
             InitializeComponent();
@@ -33,7 +33,26 @@ namespace UC_Tableau_de_bord
             this.Controls.Add(chkEnCours);
 
             // Charger les missions depuis la base
-            toutesLesMissions = MesDatas.ChargerProblemesDepuisBase();
+            toutesLesMissions = ChargerProblemesDepuisBase(DsGlobal);
+            AfficherTableauDeBord(toutesLesMissions);
+        }
+
+        public UserControl1(DataSet ds)
+        {
+            InitializeComponent();
+
+            DsGlobal = ds;
+
+            // CheckBox "En cours"
+            CheckBox chkEnCours = new CheckBox();
+            chkEnCours.Text = "Mission en cours ";
+            chkEnCours.AutoSize = true;
+            chkEnCours.Location = new System.Drawing.Point(10, 10);
+            chkEnCours.CheckedChanged += ChkEnCours_CheckedChanged;
+            this.Controls.Add(chkEnCours);
+
+            // Charger les missions depuis la base
+            toutesLesMissions = ChargerProblemesDepuisBase(DsGlobal);
             AfficherTableauDeBord(toutesLesMissions);
         }
 
@@ -165,7 +184,7 @@ namespace UC_Tableau_de_bord
 
                     btnPDF.Click += (s, e) =>
                     {
-                        var mission = MesDatas.GetMissionParId(probleme.Id);
+                        var mission = GetMissionParId(probleme.Id, DsGlobal);
                         GenererPDF(mission);
                     };
 
@@ -265,6 +284,146 @@ namespace UC_Tableau_de_bord
             // Laisser vide ou ajouter du code si nécessaire
         }
 
+        public static List<Probleme> ChargerProblemesDepuisBase(DataSet DsGlobal)
+        {
+            List<Probleme> liste = new List<Probleme>();
 
+            try
+            {
+                // Accéder à la table Mission dans le DataSet
+                DataTable missionTable = DsGlobal.Tables["Mission"];
+
+                // Vérifier si la table existe
+                if (missionTable == null)
+                {
+                    Console.WriteLine("La table 'Mission' n'existe pas dans le DataSet.");
+                    return liste; // Retourner une liste vide
+                }
+
+                // Utiliser LINQ to DataSet pour effectuer la requête
+                var problemesQuery = from missionRow in missionTable.AsEnumerable()
+                                     select new Probleme
+                                     {
+                                         Id = missionRow.Field<int>("Id"),
+                                         Titre = missionRow.Field<string>("motifAppel"),
+                                         Description = missionRow.Field<string>("compteRendu"),
+                                         DateSignalement = missionRow.Field<DateTime>("DateHeureDepart"),
+                                         NiveauUrgence = missionRow.Field<int>("idNatureSinistre").ToString(), // Convertir en string
+                                         Caserne = missionRow.Field<int>("idCaserne").ToString(), // Convertir en string
+                                         DateRetour = missionRow.Field<DateTime?>("DateHeureRetour")
+                                     };
+
+                liste = problemesQuery.ToList(); // Convertir le résultat en List<Probleme>
+            }
+            catch (Exception ex)
+            {
+                // Gérer l'exception ici
+                Console.WriteLine("Une erreur s'est produite lors du chargement des problèmes : " + ex.Message);
+                // Vous pouvez également enregistrer l'erreur dans un fichier journal ou afficher un message d'erreur à l'utilisateur
+            }
+
+            return liste;
+        }
+
+
+
+
+    public static MissionComplete GetMissionParId(int id, DataSet DsGlobal)
+        {
+            MissionComplete mission = new MissionComplete
+            {
+                Pompiers = new List<string>(),
+                Engins = new List<string>()
+            };
+
+            // --- Requête principale avec jointures ---
+            string requete = @"
+                            SELECT 
+                                M.dateHeureDepart, 
+                                M.dateHeureRetour, 
+                                M.motifAppel, 
+                                M.adresse, 
+                                M.cp, 
+                                M.ville,
+                                M.terminee, 
+                                M.compteRendu, 
+                                N.libelle AS nomSinistre,
+                                C.nom AS nomCaserne
+                            FROM Mission M
+                            JOIN NatureSinistre N ON M.idNatureSinistre = N.id
+                            JOIN Caserne C ON M.idCaserne = C.id
+                            WHERE M.id = @id";
+
+            // Accéder à la table Mission dans le DataSet
+            DataTable missionTable = DsGlobal.Tables["Mission"];
+            DataTable natureSinistreTable = DsGlobal.Tables["NatureSinistre"];
+            DataTable caserneTable = DsGlobal.Tables["Caserne"];
+
+            // Utiliser LINQ to DataSet pour effectuer la requête
+            var missionQuery = from missionRow in missionTable.AsEnumerable()
+                               join natureSinistreRow in natureSinistreTable.AsEnumerable()
+                                   on missionRow.Field<int>("idNatureSinistre") equals natureSinistreRow.Field<int>("id")
+                               join caserneRow in caserneTable.AsEnumerable()
+                                   on missionRow.Field<int>("idCaserne") equals caserneRow.Field<int>("id")
+                               where missionRow.Field<int>("id") == id
+                               select new
+                               {
+                                   dateHeureDepart = missionRow.Field<DateTime>("dateHeureDepart"),
+                                   dateHeureRetour = missionRow.Field<DateTime?>("dateHeureRetour"),
+                                   motifAppel = missionRow.Field<string>("motifAppel"),
+                                   adresse = missionRow.Field<string>("adresse"),
+                                   cp = missionRow.Field<string>("cp"),
+                                   ville = missionRow.Field<string>("ville"),
+                                   terminee = missionRow.Field<bool>("terminee"),
+                                   compteRendu = missionRow.Field<string>("compteRendu"),
+                                   nomSinistre = natureSinistreRow.Field<string>("libelle"),
+                                   nomCaserne = caserneRow.Field<string>("nom"),
+                                   Id = missionRow.Field<int>("id")
+                               };
+
+            var missionResult = missionQuery.FirstOrDefault(); // Récupérer le premier résultat ou null
+
+            if (missionResult != null)
+            {
+                mission.Id = missionResult.Id;
+                mission.Titre = missionResult.nomSinistre;
+                mission.Description = missionResult.motifAppel;
+                mission.Adresse = missionResult.adresse;
+                mission.DateDebut = missionResult.dateHeureDepart;
+                mission.DateRetour = missionResult.dateHeureRetour;
+                mission.Caserne = missionResult.nomCaserne;
+                mission.CompteRendu = string.IsNullOrEmpty(missionResult.compteRendu) ? "Non renseigné." : missionResult.compteRendu;
+            }
+
+            // --- Récupération des pompiers associés à la mission via Mobiliser ---
+            DataTable mobiliserTable = DsGlobal.Tables["Mobiliser"];
+            DataTable pompierTable = DsGlobal.Tables["Pompier"];
+
+            var pompiersQuery = from mobiliserRow in mobiliserTable.AsEnumerable()
+                                join pompierRow in pompierTable.AsEnumerable()
+                                    on mobiliserRow.Field<string>("matriculePompier") equals pompierRow.Field<string>("matricule")
+                                where mobiliserRow.Field<int>("idMission") == id
+                                select pompierRow.Field<string>("Nom");
+
+            mission.Pompiers.AddRange(pompiersQuery);
+
+            // --- Récupération des engins associés à la mission via PartirAvec et TypeEngin ---
+            DataTable partirAvecTable = DsGlobal.Tables["PartirAvec"];
+            DataTable enginTable = DsGlobal.Tables["Engin"];
+            DataTable typeEnginTable = DsGlobal.Tables["TypeEngin"];
+
+            var enginsQuery = from partirAvecRow in partirAvecTable.AsEnumerable()
+                              join enginRow in enginTable.AsEnumerable()
+                                  on new { codeTypeEngin = partirAvecRow.Field<string>("codeTypeEngin"), numeroEngin = partirAvecRow.Field<string>("numeroEngin") }
+                                  equals new { codeTypeEngin = enginRow.Field<string>("codeTypeEngin"), numeroEngin = enginRow.Field<string>("numero") }
+                              join typeEnginRow in typeEnginTable.AsEnumerable()
+                                  on enginRow.Field<string>("codeTypeEngin") equals typeEnginRow.Field<string>("code")
+                              where partirAvecRow.Field<int>("idMission") == id
+                              select typeEnginRow.Field<string>("nom");
+
+            mission.Engins.AddRange(enginsQuery);
+
+            return mission;
+        }
     }
 }

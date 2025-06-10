@@ -152,8 +152,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connexion.cs" />
-    <Compile Include="mesDatas.cs" />
     <Compile Include="Probleme.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

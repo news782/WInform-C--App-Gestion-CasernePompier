@@ -15,6 +15,7 @@ using Statistiques;
 using m = UCmobilisations;
 using System.Diagnostics;
 using UCGestionPompier;
+using UC_Tableau_de_bord;
 
 namespace Caubert_Stroher_KlausnitzerSae24
 {
@@ -130,6 +131,10 @@ namespace Caubert_Stroher_KlausnitzerSae24
         private void btnTDB_Click(object sender, EventArgs e)
         {
             MoveFlameSmooth(btnTDB);
+            pnlUC.Controls.Clear();
+            UC_Tableau_de_bord.UserControl1 tdb = new UC_Tableau_de_bord.UserControl1(MesDatas.DsGlobal);
+            pnlUC.Controls.Add(tdb);
+            tdb.Show();
         }
 
         private void btnPersonnel_Click(object sender, EventArgs e)
