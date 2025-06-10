@@ -66,10 +66,43 @@ namespace UCGestionPompier
             cboGrade.DataSource = dsGlobal.Tables["Grade"];
             cboGrade.ValueMember = "code";
             cboGrade.DisplayMember = "libelle";
+
+            chklstHabilitations.Visible = true;
+            chklstHabilitations.Items.Clear();
+            foreach(DataRow dr in dsGlobal.Tables["Habilitation"].Rows)
+            {
+                chklstHabilitations.Items.Add(dr["libelle"].ToString());
+            }
+
+            cboCaserneAjout.DataSource = dsGlobal.Tables["Caserne"];
+            cboCaserneAjout.ValueMember = "id";
+            cboCaserneAjout.DisplayMember = "nom";
         }
 
         private void btnModif_Click(object sender, EventArgs e)
         {
+            pnlNouveauPompier.Visible = true;
+            pnlNouveauPompier_Load();
+        }
+
+        public void pnlNouveauPompier_Load()
+        {
+            string qry = @"Select max(matricule) + 1 from Pompier";
+            SQLiteCommand cmd = new SQLiteCommand(qry, cx);
+            lblnumMatriculeAjout.Text = cmd.ExecuteScalar().ToString();
+
+            cboGradeAjout.DataSource = dsGlobal.Tables["Grade"];
+            cboGradeAjout.DisplayMember = "libelle";
+            cboGradeAjout.ValueMember = "code";
+
+            afficheGrade(cboGradeAjout.SelectedValue.ToString(), picGradeAjout);
+
+            afficheGrade(cboGradeAjout.SelectedValue.ToString(), picGradeAjout);
+
+            foreach(DataRow dr in dsGlobal.Tables["Habilitation"].Rows)
+            {
+                chkLsAjout.Items.Add(dr["libelle"]);
+            }
 
         }
 
@@ -162,7 +195,7 @@ namespace UCGestionPompier
             }
 
 
-            qry = @"SELECT  h.libelle 
+            qry = @"SELECT  h.libelle || ' obtenue le : ' || p.dateObtention as hab
 	                    FROM Passer p JOIN Habilitation h 
 		                    ON h.id = p.idHabilitation 
 			                    WHERE p.matriculePompier = " + cboPompier.SelectedValue;
@@ -177,7 +210,7 @@ namespace UCGestionPompier
             { 
                 foreach(DataRow dr in dtHabi.Rows)
                 {
-                    lbHabilitions.Items.Add(dr["libelle"].ToString());
+                    lbHabilitions.Items.Add(dr["hab"].ToString());
                 }
             }
 
@@ -202,14 +235,14 @@ namespace UCGestionPompier
 
 
 
-            afficheGrade(dtCePompier.Rows[0]["codeGrade"].ToString());
+            afficheGrade(dtCePompier.Rows[0]["codeGrade"].ToString(), picGrade);
         }
 
-        private void afficheGrade(string grade)
+        private void afficheGrade(string grade, PictureBox pic)
         {
             string chemin = @"ImagesGrades\" + grade + ".png";
 
-            picGrade.Image = Image.FromFile(chemin);
+            pic.Image = Image.FromFile(chemin);
         }
 
         private void cboPompier_SelectionChangeCommitted(object sender, EventArgs e)
@@ -284,8 +317,146 @@ namespace UCGestionPompier
 
         private void cboGrade_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            afficheGrade(cboGrade.SelectedValue.ToString());
+            afficheGrade(cboGrade.SelectedValue.ToString(), picGrade);
             btnConfirmerModif.Visible = true;
+        }
+
+        private void chklstHabilitations_SelectedValueChanged(object sender, EventArgs e)
+        {
+            btnConfirmerModif.Visible = true; 
+        }
+
+        private void btnConfirmerModif_Click(object sender, EventArgs e)
+        {
+
+            //MAJ du grade
+            string qry = @"UPDATE Pompier SET codeGrade = '" + cboGrade.SelectedValue + "' WHERE matricule = " + cboPompier.SelectedValue;
+            SQLiteCommand cmd = new SQLiteCommand(qry, cx);
+            cmd.ExecuteNonQuery();
+
+            //AJOUT DES HABILITATIONS
+            
+            foreach(var item in chklstHabilitations.CheckedItems)
+            {
+                try
+                {
+                    qry = @"select id from Habilitation where libelle = '" + item.ToString() + "'";
+                    cmd = new SQLiteCommand(qry, cx);
+                    int idHab = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    qry = @"INSERT or IGNORE into Passer (matriculePompier, idHabilitation, dateObtention) VALUES (" + cboPompier.SelectedValue + ", " + idHab + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+                    cmd = new SQLiteCommand(qry, cx);
+                    cmd.ExecuteNonQuery();
+                }
+
+                catch(Exception err) 
+                {
+                    MessageBox.Show(qry);
+                    MessageBox.Show("Erreur " + err);
+                }
+                
+            }
+        }
+
+        private void cboGradeAjout_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            afficheGrade(cboGradeAjout.SelectedValue.ToString(), picGradeAjout);
+        }
+
+        private void btnAjouterPompier_Click(object sender, EventArgs e)
+        {
+            if(txtNomAjout.Text.Length == 0 || txtPrenomAjout.Text.Length == 0 || txtTelAjout.Text.Length == 0)
+            {
+                return;
+            }
+            
+            else
+            {
+                if(!testRDB(pnlSexe) || !testRDB(pnlType))
+                {
+                    return;
+                }
+
+                else
+                {
+                    string matricule = lblnumMatriculeAjout.Text;
+                    string nom = txtNomAjout.Text;
+                    string prenom = txtPrenomAjout.Text;
+                    string naissance = dateNaissance.Value.ToString("yyyy-MM-dd");
+                    string tel  = txtTelAjout.Text;
+                    string genre;
+                    if(rdbF.Checked)
+                    {
+                         genre = "f";
+                    }
+                    else
+                    {
+                         genre = "m";
+                    }
+
+                    string type;
+                    if(rdbPro.Checked)
+                    {
+                         type = "p";
+                    }
+                    else
+                    {
+                         type = "v";
+                    }
+
+                    string grade = cboGradeAjout.SelectedValue.ToString();
+                    string bip = matricule;
+                    string dateEmbauche = DateTime.Now.ToString("yyyy-MM-dd");
+
+
+                    string qry = @"INSERT INTO Pompier (matricule, nom, prenom, sexe, dateNaissance, type, portable, bip, enMission, enConge, codeGrade, dateEmbauche) VALUES
+                          (" + matricule + ", '" + nom + "', '" + prenom + "', '" + genre + "', '" + naissance + "', '" + type + "', '"+ tel+ "', '" + bip + "', 0, 0, '" + grade + "', '" + dateEmbauche + "')";
+
+                    SQLiteCommand cmd = new SQLiteCommand(qry, cx);
+                    cmd.ExecuteNonQuery();
+
+                    //Fin ajout du pompier dans la base pompier
+                    string idCaserne = cboCaserne.SelectedValue.ToString();
+
+                    qry = @"INSERT INTO Affectation (matriculePompier, dateA, idCaserne) VALUES
+                            (" + matricule + ", '" + dateEmbauche + "', '" + idCaserne + "')";
+
+                    cmd = new SQLiteCommand(qry, cx);
+                    cmd.ExecuteNonQuery();
+
+                    foreach(var item in chkLsAjout.SelectedItems)
+                    {
+                        qry = @"select id from Habilitation where libelle = '" + item.ToString() + "'";
+                        cmd = new SQLiteCommand(qry, cx);
+                        int idHab = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                        qry = @"INSERT or IGNORE into Passer (matriculePompier, idHabilitation, dateObtention) VALUES (" + matricule + ", " + idHab + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+                        cmd = new SQLiteCommand(qry, cx);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            pnlNouveauPompier.Visible = false;
+        }
+
+        public bool testRDB(Panel pnl)
+        {
+            foreach(RadioButton rdb in pnl.Controls)
+            {
+                if(rdb.Checked == true)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void btnfermer_Click(object sender, EventArgs e)
+        {
+            pnlNouveauPompier.Visible = false;
         }
     }
 }

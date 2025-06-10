@@ -45,6 +45,7 @@
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtBip = new System.Windows.Forms.TextBox();
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.chklstHabilitations = new System.Windows.Forms.CheckedListBox();
             this.lbHabilitions = new System.Windows.Forms.ListBox();
             this.lblConger = new System.Windows.Forms.Label();
             this.lbAncienneAffectation = new System.Windows.Forms.ListBox();
@@ -53,11 +54,43 @@
             this.btnConfirmerModif = new System.Windows.Forms.Button();
             this.cboGrade = new System.Windows.Forms.ComboBox();
             this.txtGrade = new System.Windows.Forms.TextBox();
-            this.chklstHabilitations = new System.Windows.Forms.CheckedListBox();
+            this.pnlNouveauPompier = new System.Windows.Forms.Panel();
+            this.lblDateNaissance = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblPrenom = new System.Windows.Forms.Label();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.pnlSexe = new System.Windows.Forms.Panel();
+            this.rdbF = new System.Windows.Forms.RadioButton();
+            this.rdbH = new System.Windows.Forms.RadioButton();
+            this.pnlType = new System.Windows.Forms.Panel();
+            this.rdbVolontaire = new System.Windows.Forms.RadioButton();
+            this.rdbPro = new System.Windows.Forms.RadioButton();
+            this.dateNaissance = new System.Windows.Forms.DateTimePicker();
+            this.picLogoAjout = new System.Windows.Forms.PictureBox();
+            this.txtPrenomAjout = new System.Windows.Forms.TextBox();
+            this.cboGradeAjout = new System.Windows.Forms.ComboBox();
+            this.grpInfoAjout = new System.Windows.Forms.GroupBox();
+            this.chkLsAjout = new System.Windows.Forms.CheckedListBox();
+            this.txtTelAjout = new System.Windows.Forms.TextBox();
+            this.txtNomAjout = new System.Windows.Forms.TextBox();
+            this.picGradeAjout = new System.Windows.Forms.PictureBox();
+            this.lblnumMatriculeAjout = new System.Windows.Forms.Label();
+            this.lblMatriculeAjout = new System.Windows.Forms.Label();
+            this.lblFicheAjout = new System.Windows.Forms.Label();
+            this.btnAjouterPompier = new System.Windows.Forms.Button();
+            this.lblAffecterA = new System.Windows.Forms.Label();
+            this.cboCaserneAjout = new System.Windows.Forms.ComboBox();
+            this.btnfermer = new System.Windows.Forms.Button();
             this.grpEste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGrade)).BeginInit();
             this.grpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlNouveauPompier.SuspendLayout();
+            this.pnlSexe.SuspendLayout();
+            this.pnlType.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoAjout)).BeginInit();
+            this.grpInfoAjout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGradeAjout)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEste
@@ -241,6 +274,18 @@
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Informations carrière";
             // 
+            // chklstHabilitations
+            // 
+            this.chklstHabilitations.BackColor = System.Drawing.Color.FloralWhite;
+            this.chklstHabilitations.CheckOnClick = true;
+            this.chklstHabilitations.FormattingEnabled = true;
+            this.chklstHabilitations.Location = new System.Drawing.Point(17, 113);
+            this.chklstHabilitations.Name = "chklstHabilitations";
+            this.chklstHabilitations.Size = new System.Drawing.Size(601, 88);
+            this.chklstHabilitations.TabIndex = 3;
+            this.chklstHabilitations.Visible = false;
+            this.chklstHabilitations.SelectedValueChanged += new System.EventHandler(this.chklstHabilitations_SelectedValueChanged);
+            // 
             // lbHabilitions
             // 
             this.lbHabilitions.BackColor = System.Drawing.Color.FloralWhite;
@@ -275,7 +320,7 @@
             // pnlLog
             // 
             this.pnlLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlLog.Location = new System.Drawing.Point(342, 215);
+            this.pnlLog.Location = new System.Drawing.Point(328, 190);
             this.pnlLog.Name = "pnlLog";
             this.pnlLog.Size = new System.Drawing.Size(375, 227);
             this.pnlLog.TabIndex = 12;
@@ -304,6 +349,7 @@
             this.btnConfirmerModif.Text = "Confirmer modifications";
             this.btnConfirmerModif.UseVisualStyleBackColor = false;
             this.btnConfirmerModif.Visible = false;
+            this.btnConfirmerModif.Click += new System.EventHandler(this.btnConfirmerModif_Click);
             // 
             // cboGrade
             // 
@@ -326,20 +372,311 @@
             this.txtGrade.TabIndex = 16;
             this.txtGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chklstHabilitations
+            // pnlNouveauPompier
             // 
-            this.chklstHabilitations.BackColor = System.Drawing.Color.FloralWhite;
-            this.chklstHabilitations.FormattingEnabled = true;
-            this.chklstHabilitations.Location = new System.Drawing.Point(17, 113);
-            this.chklstHabilitations.Name = "chklstHabilitations";
-            this.chklstHabilitations.Size = new System.Drawing.Size(601, 88);
-            this.chklstHabilitations.TabIndex = 3;
+            this.pnlNouveauPompier.Controls.Add(this.btnfermer);
+            this.pnlNouveauPompier.Controls.Add(this.cboCaserneAjout);
+            this.pnlNouveauPompier.Controls.Add(this.lblAffecterA);
+            this.pnlNouveauPompier.Controls.Add(this.btnAjouterPompier);
+            this.pnlNouveauPompier.Controls.Add(this.lblDateNaissance);
+            this.pnlNouveauPompier.Controls.Add(this.lblTel);
+            this.pnlNouveauPompier.Controls.Add(this.lblPrenom);
+            this.pnlNouveauPompier.Controls.Add(this.lblNom);
+            this.pnlNouveauPompier.Controls.Add(this.pnlSexe);
+            this.pnlNouveauPompier.Controls.Add(this.pnlType);
+            this.pnlNouveauPompier.Controls.Add(this.dateNaissance);
+            this.pnlNouveauPompier.Controls.Add(this.picLogoAjout);
+            this.pnlNouveauPompier.Controls.Add(this.txtPrenomAjout);
+            this.pnlNouveauPompier.Controls.Add(this.cboGradeAjout);
+            this.pnlNouveauPompier.Controls.Add(this.grpInfoAjout);
+            this.pnlNouveauPompier.Controls.Add(this.txtTelAjout);
+            this.pnlNouveauPompier.Controls.Add(this.txtNomAjout);
+            this.pnlNouveauPompier.Controls.Add(this.picGradeAjout);
+            this.pnlNouveauPompier.Controls.Add(this.lblnumMatriculeAjout);
+            this.pnlNouveauPompier.Controls.Add(this.lblMatriculeAjout);
+            this.pnlNouveauPompier.Controls.Add(this.lblFicheAjout);
+            this.pnlNouveauPompier.Location = new System.Drawing.Point(0, 0);
+            this.pnlNouveauPompier.Name = "pnlNouveauPompier";
+            this.pnlNouveauPompier.Size = new System.Drawing.Size(1000, 649);
+            this.pnlNouveauPompier.TabIndex = 17;
+            this.pnlNouveauPompier.Visible = false;
+            // 
+            // lblDateNaissance
+            // 
+            this.lblDateNaissance.AutoSize = true;
+            this.lblDateNaissance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblDateNaissance.Location = new System.Drawing.Point(619, 181);
+            this.lblDateNaissance.Name = "lblDateNaissance";
+            this.lblDateNaissance.Size = new System.Drawing.Size(166, 25);
+            this.lblDateNaissance.TabIndex = 38;
+            this.lblDateNaissance.Text = "Date de naissance";
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblTel.Location = new System.Drawing.Point(278, 181);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(87, 25);
+            this.lblTel.TabIndex = 37;
+            this.lblTel.Text = "N° de tel";
+            // 
+            // lblPrenom
+            // 
+            this.lblPrenom.AutoSize = true;
+            this.lblPrenom.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrenom.Location = new System.Drawing.Point(619, 106);
+            this.lblPrenom.Name = "lblPrenom";
+            this.lblPrenom.Size = new System.Drawing.Size(79, 25);
+            this.lblPrenom.TabIndex = 36;
+            this.lblPrenom.Text = "Prénom";
+            // 
+            // lblNom
+            // 
+            this.lblNom.AutoSize = true;
+            this.lblNom.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblNom.Location = new System.Drawing.Point(278, 106);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(55, 25);
+            this.lblNom.TabIndex = 35;
+            this.lblNom.Text = "Nom";
+            // 
+            // pnlSexe
+            // 
+            this.pnlSexe.Controls.Add(this.rdbF);
+            this.pnlSexe.Controls.Add(this.rdbH);
+            this.pnlSexe.Location = new System.Drawing.Point(613, 268);
+            this.pnlSexe.Name = "pnlSexe";
+            this.pnlSexe.Size = new System.Drawing.Size(286, 71);
+            this.pnlSexe.TabIndex = 34;
+            // 
+            // rdbF
+            // 
+            this.rdbF.AutoSize = true;
+            this.rdbF.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.rdbF.Location = new System.Drawing.Point(158, 19);
+            this.rdbF.Name = "rdbF";
+            this.rdbF.Size = new System.Drawing.Size(94, 29);
+            this.rdbF.TabIndex = 3;
+            this.rdbF.TabStop = true;
+            this.rdbF.Text = "Femme";
+            this.rdbF.UseVisualStyleBackColor = true;
+            // 
+            // rdbH
+            // 
+            this.rdbH.AutoSize = true;
+            this.rdbH.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.rdbH.Location = new System.Drawing.Point(25, 19);
+            this.rdbH.Name = "rdbH";
+            this.rdbH.Size = new System.Drawing.Size(99, 29);
+            this.rdbH.TabIndex = 2;
+            this.rdbH.TabStop = true;
+            this.rdbH.Text = "Homme";
+            this.rdbH.UseVisualStyleBackColor = true;
+            // 
+            // pnlType
+            // 
+            this.pnlType.Controls.Add(this.rdbVolontaire);
+            this.pnlType.Controls.Add(this.rdbPro);
+            this.pnlType.Location = new System.Drawing.Point(271, 268);
+            this.pnlType.Name = "pnlType";
+            this.pnlType.Size = new System.Drawing.Size(288, 71);
+            this.pnlType.TabIndex = 33;
+            // 
+            // rdbVolontaire
+            // 
+            this.rdbVolontaire.AutoSize = true;
+            this.rdbVolontaire.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.rdbVolontaire.Location = new System.Drawing.Point(160, 18);
+            this.rdbVolontaire.Name = "rdbVolontaire";
+            this.rdbVolontaire.Size = new System.Drawing.Size(118, 29);
+            this.rdbVolontaire.TabIndex = 1;
+            this.rdbVolontaire.TabStop = true;
+            this.rdbVolontaire.Text = "Volontaire";
+            this.rdbVolontaire.UseVisualStyleBackColor = true;
+            // 
+            // rdbPro
+            // 
+            this.rdbPro.AutoSize = true;
+            this.rdbPro.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.rdbPro.Location = new System.Drawing.Point(20, 19);
+            this.rdbPro.Name = "rdbPro";
+            this.rdbPro.Size = new System.Drawing.Size(134, 29);
+            this.rdbPro.TabIndex = 0;
+            this.rdbPro.TabStop = true;
+            this.rdbPro.Text = "Professionel";
+            this.rdbPro.UseVisualStyleBackColor = true;
+            // 
+            // dateNaissance
+            // 
+            this.dateNaissance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dateNaissance.Location = new System.Drawing.Point(613, 212);
+            this.dateNaissance.Name = "dateNaissance";
+            this.dateNaissance.Size = new System.Drawing.Size(286, 33);
+            this.dateNaissance.TabIndex = 32;
+            // 
+            // picLogoAjout
+            // 
+            this.picLogoAjout.Image = ((System.Drawing.Image)(resources.GetObject("picLogoAjout.Image")));
+            this.picLogoAjout.Location = new System.Drawing.Point(703, 32);
+            this.picLogoAjout.Name = "picLogoAjout";
+            this.picLogoAjout.Size = new System.Drawing.Size(196, 63);
+            this.picLogoAjout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogoAjout.TabIndex = 30;
+            this.picLogoAjout.TabStop = false;
+            // 
+            // txtPrenomAjout
+            // 
+            this.txtPrenomAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtPrenomAjout.Location = new System.Drawing.Point(611, 134);
+            this.txtPrenomAjout.Name = "txtPrenomAjout";
+            this.txtPrenomAjout.Size = new System.Drawing.Size(288, 33);
+            this.txtPrenomAjout.TabIndex = 24;
+            this.txtPrenomAjout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cboGradeAjout
+            // 
+            this.cboGradeAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cboGradeAjout.FormattingEnabled = true;
+            this.cboGradeAjout.Location = new System.Drawing.Point(62, 253);
+            this.cboGradeAjout.Name = "cboGradeAjout";
+            this.cboGradeAjout.Size = new System.Drawing.Size(146, 33);
+            this.cboGradeAjout.TabIndex = 31;
+            this.cboGradeAjout.SelectionChangeCommitted += new System.EventHandler(this.cboGradeAjout_SelectionChangeCommitted);
+            // 
+            // grpInfoAjout
+            // 
+            this.grpInfoAjout.Controls.Add(this.chkLsAjout);
+            this.grpInfoAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.grpInfoAjout.Location = new System.Drawing.Point(276, 345);
+            this.grpInfoAjout.Name = "grpInfoAjout";
+            this.grpInfoAjout.Size = new System.Drawing.Size(641, 218);
+            this.grpInfoAjout.TabIndex = 29;
+            this.grpInfoAjout.TabStop = false;
+            this.grpInfoAjout.Text = "Informations carrière";
+            // 
+            // chkLsAjout
+            // 
+            this.chkLsAjout.BackColor = System.Drawing.Color.FloralWhite;
+            this.chkLsAjout.CheckOnClick = true;
+            this.chkLsAjout.FormattingEnabled = true;
+            this.chkLsAjout.Location = new System.Drawing.Point(17, 32);
+            this.chkLsAjout.Name = "chkLsAjout";
+            this.chkLsAjout.Size = new System.Drawing.Size(601, 172);
+            this.chkLsAjout.TabIndex = 3;
+            // 
+            // txtTelAjout
+            // 
+            this.txtTelAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtTelAjout.Location = new System.Drawing.Point(271, 212);
+            this.txtTelAjout.Name = "txtTelAjout";
+            this.txtTelAjout.Size = new System.Drawing.Size(288, 33);
+            this.txtTelAjout.TabIndex = 25;
+            this.txtTelAjout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNomAjout
+            // 
+            this.txtNomAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtNomAjout.Location = new System.Drawing.Point(271, 134);
+            this.txtNomAjout.Name = "txtNomAjout";
+            this.txtNomAjout.Size = new System.Drawing.Size(288, 33);
+            this.txtNomAjout.TabIndex = 23;
+            this.txtNomAjout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // picGradeAjout
+            // 
+            this.picGradeAjout.Location = new System.Drawing.Point(62, 92);
+            this.picGradeAjout.Name = "picGradeAjout";
+            this.picGradeAjout.Size = new System.Drawing.Size(146, 146);
+            this.picGradeAjout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGradeAjout.TabIndex = 22;
+            this.picGradeAjout.TabStop = false;
+            // 
+            // lblnumMatriculeAjout
+            // 
+            this.lblnumMatriculeAjout.AutoSize = true;
+            this.lblnumMatriculeAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumMatriculeAjout.Location = new System.Drawing.Point(155, 64);
+            this.lblnumMatriculeAjout.Name = "lblnumMatriculeAjout";
+            this.lblnumMatriculeAjout.Size = new System.Drawing.Size(53, 25);
+            this.lblnumMatriculeAjout.TabIndex = 20;
+            this.lblnumMatriculeAjout.Text = "3108";
+            this.lblnumMatriculeAjout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMatriculeAjout
+            // 
+            this.lblMatriculeAjout.AutoSize = true;
+            this.lblMatriculeAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatriculeAjout.Location = new System.Drawing.Point(57, 64);
+            this.lblMatriculeAjout.Name = "lblMatriculeAjout";
+            this.lblMatriculeAjout.Size = new System.Drawing.Size(104, 25);
+            this.lblMatriculeAjout.TabIndex = 19;
+            this.lblMatriculeAjout.Text = "Matricule :";
+            this.lblMatriculeAjout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFicheAjout
+            // 
+            this.lblFicheAjout.AutoSize = true;
+            this.lblFicheAjout.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFicheAjout.Location = new System.Drawing.Point(57, 20);
+            this.lblFicheAjout.Name = "lblFicheAjout";
+            this.lblFicheAjout.Size = new System.Drawing.Size(153, 30);
+            this.lblFicheAjout.TabIndex = 18;
+            this.lblFicheAjout.Text = "Fiche pompier";
+            // 
+            // btnAjouterPompier
+            // 
+            this.btnAjouterPompier.AutoSize = true;
+            this.btnAjouterPompier.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAjouterPompier.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAjouterPompier.ForeColor = System.Drawing.Color.White;
+            this.btnAjouterPompier.Location = new System.Drawing.Point(728, 588);
+            this.btnAjouterPompier.Name = "btnAjouterPompier";
+            this.btnAjouterPompier.Size = new System.Drawing.Size(198, 31);
+            this.btnAjouterPompier.TabIndex = 39;
+            this.btnAjouterPompier.Text = "Ajouter pompier";
+            this.btnAjouterPompier.UseVisualStyleBackColor = false;
+            this.btnAjouterPompier.Click += new System.EventHandler(this.btnAjouterPompier_Click);
+            // 
+            // lblAffecterA
+            // 
+            this.lblAffecterA.AutoSize = true;
+            this.lblAffecterA.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblAffecterA.Location = new System.Drawing.Point(57, 299);
+            this.lblAffecterA.Name = "lblAffecterA";
+            this.lblAffecterA.Size = new System.Drawing.Size(97, 25);
+            this.lblAffecterA.TabIndex = 40;
+            this.lblAffecterA.Text = "Affecter à";
+            // 
+            // cboCaserneAjout
+            // 
+            this.cboCaserneAjout.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCaserneAjout.FormattingEnabled = true;
+            this.cboCaserneAjout.Location = new System.Drawing.Point(62, 327);
+            this.cboCaserneAjout.Name = "cboCaserneAjout";
+            this.cboCaserneAjout.Size = new System.Drawing.Size(146, 28);
+            this.cboCaserneAjout.TabIndex = 41;
+            // 
+            // btnfermer
+            // 
+            this.btnfermer.AutoSize = true;
+            this.btnfermer.BackColor = System.Drawing.Color.White;
+            this.btnfermer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnfermer.ForeColor = System.Drawing.Color.Black;
+            this.btnfermer.Location = new System.Drawing.Point(38, 588);
+            this.btnfermer.Name = "btnfermer";
+            this.btnfermer.Size = new System.Drawing.Size(198, 31);
+            this.btnfermer.TabIndex = 42;
+            this.btnfermer.Text = "Fermer";
+            this.btnfermer.UseVisualStyleBackColor = false;
+            this.btnfermer.Click += new System.EventHandler(this.btnfermer_Click);
             // 
             // UCgestionPompier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
+            this.Controls.Add(this.pnlNouveauPompier);
             this.Controls.Add(this.txtGrade);
             this.Controls.Add(this.cboGrade);
             this.Controls.Add(this.btnConfirmerModif);
@@ -366,6 +703,15 @@
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlNouveauPompier.ResumeLayout(false);
+            this.pnlNouveauPompier.PerformLayout();
+            this.pnlSexe.ResumeLayout(false);
+            this.pnlSexe.PerformLayout();
+            this.pnlType.ResumeLayout(false);
+            this.pnlType.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoAjout)).EndInit();
+            this.grpInfoAjout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picGradeAjout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +744,32 @@
         private System.Windows.Forms.ComboBox cboGrade;
         private System.Windows.Forms.TextBox txtGrade;
         private System.Windows.Forms.CheckedListBox chklstHabilitations;
+        private System.Windows.Forms.Panel pnlNouveauPompier;
+        private System.Windows.Forms.PictureBox picLogoAjout;
+        private System.Windows.Forms.TextBox txtPrenomAjout;
+        private System.Windows.Forms.ComboBox cboGradeAjout;
+        private System.Windows.Forms.GroupBox grpInfoAjout;
+        private System.Windows.Forms.CheckedListBox chkLsAjout;
+        private System.Windows.Forms.TextBox txtTelAjout;
+        private System.Windows.Forms.TextBox txtNomAjout;
+        private System.Windows.Forms.PictureBox picGradeAjout;
+        private System.Windows.Forms.Label lblnumMatriculeAjout;
+        private System.Windows.Forms.Label lblMatriculeAjout;
+        private System.Windows.Forms.Label lblFicheAjout;
+        private System.Windows.Forms.DateTimePicker dateNaissance;
+        private System.Windows.Forms.Panel pnlSexe;
+        private System.Windows.Forms.RadioButton rdbF;
+        private System.Windows.Forms.RadioButton rdbH;
+        private System.Windows.Forms.Panel pnlType;
+        private System.Windows.Forms.RadioButton rdbVolontaire;
+        private System.Windows.Forms.RadioButton rdbPro;
+        private System.Windows.Forms.Label lblDateNaissance;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblPrenom;
+        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.ComboBox cboCaserneAjout;
+        private System.Windows.Forms.Label lblAffecterA;
+        private System.Windows.Forms.Button btnAjouterPompier;
+        private System.Windows.Forms.Button btnfermer;
     }
 }

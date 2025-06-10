@@ -30,7 +30,6 @@ namespace Caubert_Stroher_KlausnitzerSae24
         {
             InitializeComponent();
             MesDatas.initDs(); //initialise le DataSet de la classe mesDatas
-
         }
 
         private void frmSoldatFeu_Load(object sender, EventArgs e)
@@ -155,7 +154,6 @@ namespace Caubert_Stroher_KlausnitzerSae24
                 timeIndicator.Stop();
             }
 
-            // Ease-in-out sinusoidal : (1 - cos(π * t)) / 2
             double easedT = (1 - Math.Cos(t * Math.PI)) / 2;
 
             int newTop = (int)(startTop + (endTop - startTop) * easedT);
