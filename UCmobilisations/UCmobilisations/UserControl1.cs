@@ -16,6 +16,7 @@ namespace UCmobilisations
     {
         DataTable dtEngins;
         DataTable dtPompiers;
+        public event EventHandler fermer_click;
 
 
         static DataSet dsGlobal;
@@ -54,6 +55,13 @@ namespace UCmobilisations
                 lbl.Text = dtEngins.Rows[i]["codeTypeEngin"].ToString();
                 lbl.Margin = new Padding(11);
                 tblEngins.Controls.Add(lbl, 1, i);
+
+                Label lblNum = new Label();
+                lblNum.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                lblNum.AutoSize = true;
+                lblNum.Text = dtEngins.Rows[i]["numero"].ToString();
+                lblNum.Margin = new Padding(11);
+                tblEngins.Controls.Add(lblNum, 2, i);
             }
 
             tblPompier.Controls.Clear();
@@ -80,7 +88,6 @@ namespace UCmobilisations
                 lblMatricule.Margin = new Padding(11);
                 tblPompier.Controls.Add(lblMatricule, 1, i);
 
-
                 Label lblNom = new Label();
                 lblNom.Font = new Font("Segoe UI", 12, FontStyle.Bold);
                 lblNom.AutoSize = true;
@@ -88,11 +95,7 @@ namespace UCmobilisations
                 lblNom.Text = dtPompiers.Rows[i]["nom"].ToString();
                 tblPompier.Controls.Add(lblNom, 2, i);
             }
-
             tblPompier.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            
-  
-
         }
 
         private void lblTitre_Click(object sender, EventArgs e)
@@ -120,6 +123,7 @@ namespace UCmobilisations
 
         private void btnFermer_Click(object sender, EventArgs e)
         {
+            fermer_click?.Invoke(this, e);
             this.Parent.Controls.Remove(this);
         }
     }

@@ -62,6 +62,8 @@ namespace Caubert_Stroher_KlausnitzerSae24
             if(uc.enginsDispo)
             {
                 m.UCmobilisations mobil = new m.UCmobilisations(uc.dtEngins, uc.dtPompier);
+                mobil.fermer_click += afficherTDB;
+
                 pnlUC.Controls.Clear();
                 pnlUC.Controls.Add(mobil);
                 mobil.Show();
@@ -69,6 +71,16 @@ namespace Caubert_Stroher_KlausnitzerSae24
             
             
         }
+
+        private void afficherTDB(object sender, EventArgs e)
+        {
+            TableauDeBord tdb = new TableauDeBord(MesDatas.DsGlobal);
+            pnlUC.Controls.Add(tdb);
+            tdb.Show();
+        }
+
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

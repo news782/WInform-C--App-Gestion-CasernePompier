@@ -230,11 +230,6 @@ namespace UCGestionPompier
 
             txtGrade.Text = dtCePompier.Rows[0]["codeGrade"].ToString();
 
-
-
-
-
-
             afficheGrade(dtCePompier.Rows[0]["codeGrade"].ToString(), picGrade);
         }
 
